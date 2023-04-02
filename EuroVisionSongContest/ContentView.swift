@@ -34,12 +34,11 @@ struct CountryButton: View {
     var body: some View {
         
         VStack {
-            Button(action: { print(title) }) {
-                Image(title)
-                    .resizable()
-                    .frame(maxWidth: 100, maxHeight: 100)
-            }
-            .padding()
+            Image(title)
+                .resizable()
+                .frame(maxWidth: 100, maxHeight: 100)
+                .padding()
+            
             Text(title.uppercased())
                 .font(.subheadline)
                 .bold()
@@ -57,13 +56,41 @@ struct ContentView: View {
         GridItem(.flexible())
     ]
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: gridColumns, spacing: 10) {
-                ForEach(participants, id: \.self) { country in
-                    CountryButton(title: country)
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: gridColumns, spacing: 10) {
+                    ForEach(participants, id: \.self) { country in
+                        NavigationLink(destination: VotingView()) {
+                            CountryButton(title: country)
+                        }
+                    }
                 }
             }
+            .background(
+                Image("eurovision")
+                    .resizable()
+                    .frame(maxWidth: 900, maxHeight: 900)
+                    .opacity(0.25)
+            )
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Tally") {
+                        print("tally")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Reset") {
+                        print("reset")
+                    }
+                }
+            }
+            .navigationTitle("Choose your country")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            
+            
         }
+        
     }
 }
 
