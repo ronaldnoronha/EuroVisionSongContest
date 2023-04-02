@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA6D96F529D995BF0098C63E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D96F429D995BF0098C63E /* Constants.swift */; };
 		EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */; };
 		EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCEB2825238C00E63E33 /* ContentView.swift */; };
 		EAB9CCEE2825238F00E63E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB9CCED2825238F00E63E33 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA6D96F429D995BF0098C63E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroVisionSongContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuroVisionSongContestApp.swift; sourceTree = "<group>"; };
 		EAB9CCEB2825238C00E63E33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				EAB9CCFC2825735200E63E33 /* RegisterView.swift */,
 				EAB9CCFE2825735F00E63E33 /* LoginView.swift */,
 				EAB9CD002825738000E63E33 /* VotingView.swift */,
+				EA6D96F429D995BF0098C63E /* Constants.swift */,
 			);
 			path = EuroVisionSongContest;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,
 				EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */,
+				EA6D96F529D995BF0098C63E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

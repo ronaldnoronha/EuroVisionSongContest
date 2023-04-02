@@ -17,7 +17,7 @@ enum Countries {
     var image: Image {
         switch self {
         case .uk:
-            return Image("uk")
+            return Image("united-kingdom")
         case .austria:
             return Image("austria")
         case .australia:
@@ -35,9 +35,7 @@ struct CountryButton: View {
         Button(action: { print(title) }) {
             Image(title)
                 .resizable()
-                .frame(width: 100, height: 50)
-                .cornerRadius(8)
-                .opacity(0.9)
+                .frame(maxWidth: 100, maxHeight: 100)
         }
         .padding()
     }
@@ -49,7 +47,7 @@ struct ContentView: View {
             Spacer()
             VStack {
                 Spacer()
-                CountryButton(title: "uk")
+                CountryButton(title: "united-kingdom")
                 Spacer()
                 CountryButton(title: "australia")
                 Spacer()
@@ -79,11 +77,10 @@ struct ContentView: View {
             Spacer()
         }
         .background(
-            Image("eurovisionLogo")
+            Image("eurovision")
                 .resizable()
-                .rotationEffect(.degrees(90))
-                .frame(width: 1000, height: 1100)
-                .opacity(0.5)
+                .frame(width: 900, height: 900)
+                .opacity(0.25)
         )
     }
 }
