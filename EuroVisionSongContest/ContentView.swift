@@ -32,56 +32,38 @@ struct CountryButton: View {
     
     let title: String
     var body: some View {
-        Button(action: { print(title) }) {
-            Image(title)
-                .resizable()
-                .frame(maxWidth: 100, maxHeight: 100)
+        
+        VStack {
+            Button(action: { print(title) }) {
+                Image(title)
+                    .resizable()
+                    .frame(maxWidth: 100, maxHeight: 100)
+            }
+            .padding()
+            Text(title.uppercased())
+                .font(.subheadline)
+                .bold()
+                .fontDesign(.rounded)
+            
         }
-        .padding()
     }
 }
 
 struct ContentView: View {
+    let gridColumns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     var body: some View {
-        HStack{
-            Spacer()
-            VStack {
-                Spacer()
-                CountryButton(title: "united-kingdom")
-                Spacer()
-                CountryButton(title: "australia")
-                Spacer()
-                CountryButton(title: "austria")
-                Spacer()
+        ScrollView {
+            LazyVGrid(columns: gridColumns, spacing: 10) {
+                ForEach(participants, id: \.self) { country in
+                    CountryButton(title: country)
+                }
             }
-            Spacer()
-            VStack {
-                Spacer()
-                CountryButton(title: "germany")
-                Spacer()
-                CountryButton(title: "france")
-                Spacer()
-                CountryButton(title: "spain")
-                Spacer()
-            }
-            Spacer()
-            VStack {
-                Spacer()
-                CountryButton(title: "italy")
-                Spacer()
-                CountryButton(title: "sweden")
-                Spacer()
-                CountryButton(title: "")
-                Spacer()
-            }
-            Spacer()
         }
-        .background(
-            Image("eurovision")
-                .resizable()
-                .frame(width: 900, height: 900)
-                .opacity(0.25)
-        )
     }
 }
 
