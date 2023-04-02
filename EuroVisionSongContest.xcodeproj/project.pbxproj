@@ -13,6 +13,9 @@
 		EAB9CCF12825238F00E63E33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB9CCF02825238F00E63E33 /* Preview Assets.xcassets */; };
 		EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF22825238F00E63E33 /* Persistence.swift */; };
 		EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */; };
+		EAB9CCFD2825735200E63E33 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCFC2825735200E63E33 /* RegisterView.swift */; };
+		EAB9CCFF2825735F00E63E33 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCFE2825735F00E63E33 /* LoginView.swift */; };
+		EAB9CD012825738000E63E33 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD002825738000E63E33 /* VotingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,10 @@
 		EAB9CCF02825238F00E63E33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EAB9CCF22825238F00E63E33 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EAB9CCF52825238F00E63E33 /* EuroVisionSongContest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EuroVisionSongContest.xcdatamodel; sourceTree = "<group>"; };
+		EAB9CCFC2825735200E63E33 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		EAB9CCFE2825735F00E63E33 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EAB9CD002825738000E63E33 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
+		EACC1BC328263A6B00EA1EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +62,16 @@
 		EAB9CCE82825238C00E63E33 /* EuroVisionSongContest */ = {
 			isa = PBXGroup;
 			children = (
+				EACC1BC328263A6B00EA1EAB /* Info.plist */,
 				EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */,
 				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
 				EAB9CCED2825238F00E63E33 /* Assets.xcassets */,
 				EAB9CCF22825238F00E63E33 /* Persistence.swift */,
 				EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */,
 				EAB9CCEF2825238F00E63E33 /* Preview Content */,
+				EAB9CCFC2825735200E63E33 /* RegisterView.swift */,
+				EAB9CCFE2825735F00E63E33 /* LoginView.swift */,
+				EAB9CD002825738000E63E33 /* VotingView.swift */,
 			);
 			path = EuroVisionSongContest;
 			sourceTree = "<group>";
@@ -143,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB9CCFF2825735F00E63E33 /* LoginView.swift in Sources */,
 				EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */,
+				EAB9CCFD2825735200E63E33 /* RegisterView.swift in Sources */,
+				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,
 				EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */,
@@ -280,10 +294,11 @@
 				DEVELOPMENT_TEAM = YL76G72LQS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EuroVisionSongContest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,7 +309,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -309,10 +324,11 @@
 				DEVELOPMENT_TEAM = YL76G72LQS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EuroVisionSongContest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +339,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
