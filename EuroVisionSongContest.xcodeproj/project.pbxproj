@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA3BCFDD29DA6D95009A68A9 /* CountryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFDC29DA6D95009A68A9 /* CountryButton.swift */; };
+		EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */ = {isa = PBXBuildFile; fileRef = EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */; };
+		EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFE029DAA00A009A68A9 /* SongModel.swift */; };
 		EA6D96F529D995BF0098C63E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D96F429D995BF0098C63E /* Constants.swift */; };
 		EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */; };
 		EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCEB2825238C00E63E33 /* ContentView.swift */; };
@@ -14,12 +17,13 @@
 		EAB9CCF12825238F00E63E33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB9CCF02825238F00E63E33 /* Preview Assets.xcassets */; };
 		EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF22825238F00E63E33 /* Persistence.swift */; };
 		EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */; };
-		EAB9CCFD2825735200E63E33 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCFC2825735200E63E33 /* RegisterView.swift */; };
-		EAB9CCFF2825735F00E63E33 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCFE2825735F00E63E33 /* LoginView.swift */; };
 		EAB9CD012825738000E63E33 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD002825738000E63E33 /* VotingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3BCFDC29DA6D95009A68A9 /* CountryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryButton.swift; sourceTree = "<group>"; };
+		EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongEntries.json; sourceTree = "<group>"; };
+		EA3BCFE029DAA00A009A68A9 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		EA6D96F429D995BF0098C63E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroVisionSongContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuroVisionSongContestApp.swift; sourceTree = "<group>"; };
@@ -28,8 +32,6 @@
 		EAB9CCF02825238F00E63E33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EAB9CCF22825238F00E63E33 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EAB9CCF52825238F00E63E33 /* EuroVisionSongContest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EuroVisionSongContest.xcdatamodel; sourceTree = "<group>"; };
-		EAB9CCFC2825735200E63E33 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		EAB9CCFE2825735F00E63E33 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EAB9CD002825738000E63E33 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		EACC1BC328263A6B00EA1EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3BCFDB29DA6CEA009A68A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
+				EAB9CD002825738000E63E33 /* VotingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EAB9CCDD2825238C00E63E33 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +75,17 @@
 		EAB9CCE82825238C00E63E33 /* EuroVisionSongContest */ = {
 			isa = PBXGroup;
 			children = (
+				EA3BCFDC29DA6D95009A68A9 /* CountryButton.swift */,
+				EA3BCFDB29DA6CEA009A68A9 /* Views */,
 				EACC1BC328263A6B00EA1EAB /* Info.plist */,
 				EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */,
-				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
 				EAB9CCED2825238F00E63E33 /* Assets.xcassets */,
 				EAB9CCF22825238F00E63E33 /* Persistence.swift */,
 				EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */,
 				EAB9CCEF2825238F00E63E33 /* Preview Content */,
-				EAB9CCFC2825735200E63E33 /* RegisterView.swift */,
-				EAB9CCFE2825735F00E63E33 /* LoginView.swift */,
-				EAB9CD002825738000E63E33 /* VotingView.swift */,
 				EA6D96F429D995BF0098C63E /* Constants.swift */,
+				EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */,
+				EA3BCFE029DAA00A009A68A9 /* SongModel.swift */,
 			);
 			path = EuroVisionSongContest;
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */,
 				EAB9CCF12825238F00E63E33 /* Preview Assets.xcassets in Resources */,
 				EAB9CCEE2825238F00E63E33 /* Assets.xcassets in Resources */,
 			);
@@ -157,9 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB9CCFF2825735F00E63E33 /* LoginView.swift in Sources */,
 				EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */,
-				EAB9CCFD2825735200E63E33 /* RegisterView.swift in Sources */,
+				EA3BCFDD29DA6D95009A68A9 /* CountryButton.swift in Sources */,
+				EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */,
 				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,

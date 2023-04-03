@@ -8,46 +8,6 @@
 import SwiftUI
 import CoreData
 
-enum Countries {
-    case uk
-    case australia
-    case austria
-    
-    
-    var image: Image {
-        switch self {
-        case .uk:
-            return Image("united-kingdom")
-        case .austria:
-            return Image("austria")
-        case .australia:
-            return Image("australia")
-        }
-    }
-}
-
-struct CountryButton: View {
-    @State private var isStarting = true
-    
-    
-    let title: String
-    var body: some View {
-        
-        VStack {
-            Image(title)
-                .resizable()
-                .frame(maxWidth: 100, maxHeight: 100)
-                .padding()
-            
-            Text(title.uppercased())
-                .font(.subheadline)
-                .bold()
-                .fontDesign(.rounded)
-            
-        }
-    }
-}
-
 struct ContentView: View {
     let gridColumns = [
         GridItem(.flexible()),
@@ -86,11 +46,7 @@ struct ContentView: View {
             }
             .navigationTitle("Choose your country")
             .navigationBarTitleDisplayMode(.inline)
-            
-            
-            
         }
-        
     }
 }
 

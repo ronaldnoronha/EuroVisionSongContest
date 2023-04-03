@@ -51,30 +51,30 @@ let participants: [String] = [
     "united-kingdom"
 ]
 
-let finalists: [String] = [
-    "czech-republic",
-    "romania",
-    "portugal",
-    "finland",
-    "switzerland",
-    "france",
-    "norway",
-    "armenia",
-    "italy",
-    "spain",
-    "netherlands",
-    "ukraine",
-    "germany",
-    "lithuania",
-    "azerbaijan",
-    "belgium",
-    "greece",
-    "iceland",
-    "moldova",
-    "sweden",
-    "australia",
-    "united-kingdom",
-    "poland",
-    "serbia",
-    "estonia"
+let delegates: [String] = [
+    "Aarushi",
+    "Claudio",
+    "Harish",
+    "Jordy",
+    "Ron",
+    "Tony"
 ]
+
+func getSongEntries() -> [Song] {
+    guard let fileUrl = Bundle.main.url(forResource: "SongEntries", withExtension: "json") else  {
+        fatalError("Couldn't find file in app bundle")
+    }
+
+    do {
+        let jsonData = try Data(contentsOf: fileUrl)
+        let decoder = JSONDecoder()
+        let songs = try decoder.decode([Song].self, from: jsonData)
+        return songs
+    } catch {
+        fatalError("Couldn't decode object from JSON: \(error)")
+    }
+}
+
+
+
+
