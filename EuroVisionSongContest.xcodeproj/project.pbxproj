@@ -11,6 +11,8 @@
 		EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */ = {isa = PBXBuildFile; fileRef = EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */; };
 		EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFE029DAA00A009A68A9 /* SongModel.swift */; };
 		EA6D96F529D995BF0098C63E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D96F429D995BF0098C63E /* Constants.swift */; };
+		EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE226229DC664100160DE7 /* SongCellView.swift */; };
+		EAB6713F29DD6D100054E201 /* VoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB6713E29DD6D100054E201 /* VoteCellView.swift */; };
 		EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */; };
 		EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCEB2825238C00E63E33 /* ContentView.swift */; };
 		EAB9CCEE2825238F00E63E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB9CCED2825238F00E63E33 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongEntries.json; sourceTree = "<group>"; };
 		EA3BCFE029DAA00A009A68A9 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		EA6D96F429D995BF0098C63E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAAE226229DC664100160DE7 /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
+		EAB6713E29DD6D100054E201 /* VoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteCellView.swift; sourceTree = "<group>"; };
 		EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroVisionSongContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuroVisionSongContestApp.swift; sourceTree = "<group>"; };
 		EAB9CCEB2825238C00E63E33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		EA3BCFDB29DA6CEA009A68A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EAB6713E29DD6D100054E201 /* VoteCellView.swift */,
+				EAAE226229DC664100160DE7 /* SongCellView.swift */,
 				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
 				EAB9CD002825738000E63E33 /* VotingView.swift */,
 			);
@@ -171,8 +177,10 @@
 			files = (
 				EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */,
 				EA3BCFDD29DA6D95009A68A9 /* CountryButton.swift in Sources */,
+				EAB6713F29DD6D100054E201 /* VoteCellView.swift in Sources */,
 				EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */,
 				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
+				EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,
 				EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */,

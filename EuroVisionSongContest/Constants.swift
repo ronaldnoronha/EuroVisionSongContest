@@ -75,6 +75,7 @@ func getSongEntries() -> [Song] {
     }
 }
 
+var songs: [Song] = getSongEntries()
 
 
 
