@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct CountryButton: View {
+struct CountryButtonView: View {
     let title: String
     var body: some View {
-        
         VStack {
             Image(title)
                 .resizable()
@@ -28,6 +27,6 @@ struct CountryButton: View {
 
 struct CountryButton_Previews: PreviewProvider {
     static var previews: some View {
-        CountryButton(title: "united-kingdom")
+        CountryButtonView(title: "united-kingdom")
     }
 }

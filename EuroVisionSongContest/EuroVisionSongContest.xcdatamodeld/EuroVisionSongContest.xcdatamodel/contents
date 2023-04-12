@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Votes" representedClassName="Votes" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="delegates" optional="YES" attributeType="String"/>
+        <attribute name="points1" optional="YES" attributeType="String"/>
+        <attribute name="points2" optional="YES" attributeType="String"/>
+        <attribute name="points3" optional="YES" attributeType="String"/>
+        <attribute name="points4" optional="YES" attributeType="String"/>
+        <attribute name="points5" optional="YES" attributeType="String"/>
+        <attribute name="points6" optional="YES" attributeType="String"/>
+        <attribute name="points7" optional="YES" attributeType="String"/>
+        <attribute name="points8" optional="YES" attributeType="String"/>
+        <attribute name="points10" optional="YES" attributeType="String"/>
+        <attribute name="points12" optional="YES" attributeType="String"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
 </model>

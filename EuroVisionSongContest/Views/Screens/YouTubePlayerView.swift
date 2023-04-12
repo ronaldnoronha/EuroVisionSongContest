@@ -37,8 +37,8 @@ struct YouTubePlayerView: View {
         GeometryReader { geometry in
             YouTubePlayerViewRepresentable(videoId: videoId)
                 .frame(
-                    width: min(geometry.size.width, 600),
-                    height: min(geometry.size.height, 300)
+                    width: min(geometry.size.width, 650),
+                    height: min(geometry.size.height, 325)
                 )
                 .padding()
         }

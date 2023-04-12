@@ -20,8 +20,8 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: gridColumns, spacing: 10) {
                     ForEach(participants, id: \.self) { country in
-                        NavigationLink(destination: VotingView()) {
-                            CountryButton(title: country)
+                        NavigationLink(destination: VotingView(country: country)) {
+                            CountryButtonView(title: country)
                         }
                     }
                 }
