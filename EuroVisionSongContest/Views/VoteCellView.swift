@@ -8,46 +8,40 @@
 import SwiftUI
 
 struct VoteCellView: View {
-//    @Binding var points: [Int]
-//    @Binding var selectedNumber: Int
-//
-//    init(points: Binding<[Int]>, selectedNumber: Binding<Int>) {
-//        _points = points
-//        _selectedNumber = selectedNumber
-//    }
-//
-//    var body: some View {
-//        Picker("", selection: $selectedNumber) {
-//            ForEach(points.filter { !(selectedNumber == $0) }, id:\.self) { number in
-//                Text("\(number)")
-//            }
-//        }
-//        .pickerStyle(MenuPickerStyle())
-////        .onChange(of: selectedNumber) { newValue in
-//////            updateSelectedNumbers()
-////        }
-//    }
-    @State private var numbers = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-    @State private var selectedNumbers: [Int]
+    @State private var isYouTubeLinkOpened = false
+        @State private var isYouTubeAppNotInstalledAlertPresented = false
         
-    init() {
-        selectedNumbers = [0,0,0,0,0]
-    }
-        
-    var body: some View {
-        VStack {
-            List {
-                ForEach(0..<selectedNumbers.count, id: \.self) { index in
-                    Picker("", selection: $selectedNumbers[index]) {
-                        ForEach(numbers.filter { !selectedNumbers.contains($0) || $0 == selectedNumbers[index] }, id: \.self) { number in
-                            Text("\(number)")
+        var body: some View {
+            VStack {
+                // List of cells
+                List {
+                    ForEach(0..<10, id: \.self) { index in
+                        Button(action: {
+                            openYouTubeLink()
+                        }) {
+                            Text("Cell \(index)")
                         }
                     }
-                    .pickerStyle(MenuPickerStyle())
                 }
             }
+            .alert(isPresented: $isYouTubeAppNotInstalledAlertPresented) {
+                Alert(
+                    title: Text("YouTube App Not Installed"),
+                    message: Text("Please install the YouTube app to view the video."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
-    }
+        
+        func openYouTubeLink() {
+            let youtubeURL = URL(string: "https://www.youtube.com/watch?v=VIDEO_ID")!
+            if UIApplication.shared.canOpenURL(youtubeURL) {
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            } else {
+                // Handle if YouTube app is not installed
+                isYouTubeAppNotInstalledAlertPresented = true
+            }
+        }
 }
 
 struct VoteCellView_Previews: PreviewProvider {
