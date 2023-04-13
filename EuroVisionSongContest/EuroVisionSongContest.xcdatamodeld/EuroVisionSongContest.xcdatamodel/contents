@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Votes" representedClassName="Votes" syncable="YES" codeGenerationType="class">
         <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="delegates" optional="YES" attributeType="String"/>
+        <attribute name="delegate" optional="YES" attributeType="String"/>
         <attribute name="points1" optional="YES" attributeType="String"/>
         <attribute name="points2" optional="YES" attributeType="String"/>
         <attribute name="points3" optional="YES" attributeType="String"/>

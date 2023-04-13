@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653F3CFD29E80890004C873A /* TallyDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F3CFC29E80890004C873A /* TallyDashboardView.swift */; };
+		653F3CFF29E80A2B004C873A /* TallyVotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F3CFE29E80A2B004C873A /* TallyVotesView.swift */; };
 		8AB5A1F2A6092B1E15E02F9C /* Pods_EuroVisionSongContest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */; };
 		EA3BCFDD29DA6D95009A68A9 /* CountryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFDC29DA6D95009A68A9 /* CountryButtonView.swift */; };
 		EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */ = {isa = PBXBuildFile; fileRef = EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		3D0B75652FBB402E4F345ADF /* Pods-EuroVisionSongContest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.release.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.release.xcconfig"; sourceTree = "<group>"; };
+		653F3CFC29E80890004C873A /* TallyDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyDashboardView.swift; sourceTree = "<group>"; };
+		653F3CFE29E80A2B004C873A /* TallyVotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyVotesView.swift; sourceTree = "<group>"; };
 		67966ED27303739551926E19 /* Pods-EuroVisionSongContest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.debug.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.debug.xcconfig"; sourceTree = "<group>"; };
 		EA3BCFDC29DA6D95009A68A9 /* CountryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryButtonView.swift; sourceTree = "<group>"; };
 		EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongEntries.json; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
 				EAB9CD002825738000E63E33 /* VotingView.swift */,
 				EA57061C29E63F14009C1997 /* YouTubePlayerView.swift */,
+				653F3CFC29E80890004C873A /* TallyDashboardView.swift */,
+				653F3CFE29E80A2B004C873A /* TallyVotesView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 				EAB6713F29DD6D100054E201 /* VoteCellView.swift in Sources */,
 				EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */,
 				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
+				653F3CFF29E80A2B004C873A /* TallyVotesView.swift in Sources */,
 				EA680CD529E6EEF5007BD693 /* VoteModel.swift in Sources */,
+				653F3CFD29E80890004C873A /* TallyDashboardView.swift in Sources */,
 				EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,

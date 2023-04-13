@@ -12,7 +12,7 @@ struct VotingView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    @State private var selectedDelegate: String?
+    @State private var selectedDelegate: String = delegates[0]
     @State private var points: [Int] = [12,10,8,7,6,5,4,3,2,1,0]
     @State private var selectedNumbers: [Int] = Array(repeating: 0, count: songs.count)
     @State private var isYouTubeLinkOpened = false
@@ -90,7 +90,7 @@ struct VotingView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save") {
                     let votes = Votes(context: managedObjectContext)
-                    votes.delegates = selectedDelegate
+                    votes.delegate = selectedDelegate
                     votes.country = country
                     
                     do {

@@ -15,7 +15,7 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newItem = Votes(context: viewContext)
-            newItem.delegates = ""
+            newItem.delegate = " "
         }
         do {
             try viewContext.save()

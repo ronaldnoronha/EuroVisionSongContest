@@ -34,9 +34,7 @@ struct ContentView: View {
             )
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Tally") {
-                        print("tally")
-                    }
+                    NavigationLink(destination: TallyDashboardView(), label: {Text("Tally")})
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Reset") {
