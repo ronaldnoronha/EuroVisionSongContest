@@ -17,6 +17,8 @@ struct VotingView: View {
     @State private var selectedNumbers: [Int] = Array(repeating: 0, count: songs.count)
     @State private var isYouTubeLinkOpened = false
     @State private var showModal = false
+    @State private var validVotes = false
+    
     
     let country: String
     
@@ -67,6 +69,9 @@ struct VotingView: View {
                                 YouTubePlayerView(videoId: songs[index].link)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                             }
+                            .onChange(of: selectedNumbers) { _ in
+                                validVotes = points.count == Set(selectedNumbers).count ? true : false                                
+                            }
                         }
                     } // :LIST
                 } // :SECTION
@@ -92,6 +97,16 @@ struct VotingView: View {
                     let votes = Votes(context: managedObjectContext)
                     votes.delegate = selectedDelegate
                     votes.country = country
+                    votes.points12 = songs[selectedNumbers.firstIndex(of: 12)!].country
+                    votes.points10 = songs[selectedNumbers.firstIndex(of: 10)!].country
+                    votes.points8 = songs[selectedNumbers.firstIndex(of: 8)!].country
+                    votes.points7 = songs[selectedNumbers.firstIndex(of: 7)!].country
+                    votes.points6 = songs[selectedNumbers.firstIndex(of: 6)!].country
+                    votes.points5 = songs[selectedNumbers.firstIndex(of: 5)!].country
+                    votes.points4 = songs[selectedNumbers.firstIndex(of: 4)!].country
+                    votes.points3 = songs[selectedNumbers.firstIndex(of: 3)!].country
+                    votes.points2 = songs[selectedNumbers.firstIndex(of: 2)!].country
+                    votes.points1 = songs[selectedNumbers.firstIndex(of: 1)!].country
                     
                     do {
                         try managedObjectContext.save()
@@ -101,7 +116,7 @@ struct VotingView: View {
                     }
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                // TODO: - .disabled(!validVotes)
+                .disabled(!validVotes)
             }
         }
     }
