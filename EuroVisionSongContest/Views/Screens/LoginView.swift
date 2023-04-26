@@ -67,27 +67,45 @@ struct LoginView: View {
                 .padding(.horizontal)
                 
                 Spacer()
-                
-                Button {
-                    Task {
-                        try await loginManager.login(name: name, password: password)                        
+                HStack {
+                    Button {
+                        Task {
+                            try await loginManager.login(name: name, password: password)
+                        }
+                    } label: {
+                        Text("Login")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
                     }
-                } label: {
-                    Text("Login")
-                        .font(.title2)
-                        .bold()
-                        .foregroundColor(.white)
-                }
-                .frame(height: 50)
-                .frame(maxWidth: .infinity)
-                .background(
-                    isLoginButtonDisabled ?
-                    LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        isLoginButtonDisabled ?
+                        LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                            LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+                    .cornerRadius(20)
+                    .disabled(isLoginButtonDisabled)
+                    .padding()
+                    
+                    Button {
+                        print("Signup")
+                    } label: {
+                        Text("Signup")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(
                         LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
-                .cornerRadius(20)
-                .disabled(isLoginButtonDisabled)
-                .padding()
+                    )
+                    .cornerRadius(20)
+                    .padding()
+                }
+                
                 
                 if loginManager.isUnsuccessfulLogin {
                     Text("Wrong details! Try again")
@@ -99,12 +117,14 @@ struct LoginView: View {
             }
         }
         .navigationTitle("Login")
+        .navigationBarTitleDisplayMode(.inline)
         .background(
             Image("eurovision")
                 .resizable()
                 .frame(maxWidth: 900, maxHeight: 900)
                 .opacity(0.25)
         )
+        
         
     }
 }
