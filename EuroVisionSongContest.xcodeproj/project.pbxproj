@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6527DBFA29F7A1CB00556BE4 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527DBF929F7A1CB00556BE4 /* LoginButtonView.swift */; };
 		653F3CFD29E80890004C873A /* TallyDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F3CFC29E80890004C873A /* TallyDashboardView.swift */; };
 		653F3CFF29E80A2B004C873A /* TallyVotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F3CFE29E80A2B004C873A /* TallyVotesView.swift */; };
 		65407BDA29EEB7CF00C5EAB6 /* EurovisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65407BD929EEB7CF00C5EAB6 /* EurovisionService.swift */; };
 		6583DC1129F6612300AC8026 /* RepresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583DC1029F6612300AC8026 /* RepresentationModel.swift */; };
 		6583DC1329F7577000AC8026 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583DC1229F7577000AC8026 /* ErrorView.swift */; };
-		65934D4B29EFC83C00F3D2F1 /* ServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4A29EFC83C00F3D2F1 /* ServiceEndpoints.swift */; };
 		65934D4E29EFDEE400F3D2F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4D29EFDEE400F3D2F1 /* LoginView.swift */; };
 		65934D5029EFDF9600F3D2F1 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4F29EFDF9600F3D2F1 /* LoggedInView.swift */; };
 		8AB5A1F2A6092B1E15E02F9C /* Pods_EuroVisionSongContest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */; };
@@ -35,12 +35,12 @@
 
 /* Begin PBXFileReference section */
 		3D0B75652FBB402E4F345ADF /* Pods-EuroVisionSongContest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.release.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.release.xcconfig"; sourceTree = "<group>"; };
+		6527DBF929F7A1CB00556BE4 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		653F3CFC29E80890004C873A /* TallyDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyDashboardView.swift; sourceTree = "<group>"; };
 		653F3CFE29E80A2B004C873A /* TallyVotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyVotesView.swift; sourceTree = "<group>"; };
 		65407BD929EEB7CF00C5EAB6 /* EurovisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurovisionService.swift; sourceTree = "<group>"; };
 		6583DC1029F6612300AC8026 /* RepresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentationModel.swift; sourceTree = "<group>"; };
 		6583DC1229F7577000AC8026 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		65934D4A29EFC83C00F3D2F1 /* ServiceEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndpoints.swift; sourceTree = "<group>"; };
 		65934D4D29EFDEE400F3D2F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65934D4F29EFDF9600F3D2F1 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		67966ED27303739551926E19 /* Pods-EuroVisionSongContest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.debug.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,31 +93,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		65934D4729EFC72500F3D2F1 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				65934D4C29EFC84600F3D2F1 /* Services */,
-				65934D4929EFC81600F3D2F1 /* Endpoints */,
-				65934D4829EFC80D00F3D2F1 /* Base */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		65934D4829EFC80D00F3D2F1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		65934D4929EFC81600F3D2F1 /* Endpoints */ = {
-			isa = PBXGroup;
-			children = (
-				65934D4A29EFC83C00F3D2F1 /* ServiceEndpoints.swift */,
-			);
-			path = Endpoints;
-			sourceTree = "<group>";
-		};
 		65934D4C29EFC84600F3D2F1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +107,7 @@
 				EA680CD729E6EF52007BD693 /* Cells */,
 				EA680CD629E6EF30007BD693 /* Screens */,
 				EA3BCFDC29DA6D95009A68A9 /* CountryButtonView.swift */,
+				6527DBF929F7A1CB00556BE4 /* LoginButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,7 +167,7 @@
 		EAB9CCE82825238C00E63E33 /* EuroVisionSongContest */ = {
 			isa = PBXGroup;
 			children = (
-				65934D4729EFC72500F3D2F1 /* Network */,
+				65934D4C29EFC84600F3D2F1 /* Services */,
 				EA680CD829E6EFCA007BD693 /* Models */,
 				EA3BCFDB29DA6CEA009A68A9 /* Views */,
 				EACC1BC328263A6B00EA1EAB /* Info.plist */,
@@ -336,12 +312,12 @@
 				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
 				6583DC1129F6612300AC8026 /* RepresentationModel.swift in Sources */,
 				653F3CFF29E80A2B004C873A /* TallyVotesView.swift in Sources */,
-				65934D4B29EFC83C00F3D2F1 /* ServiceEndpoints.swift in Sources */,
 				65934D5029EFDF9600F3D2F1 /* LoggedInView.swift in Sources */,
 				EA680CD529E6EEF5007BD693 /* VoteModel.swift in Sources */,
 				653F3CFD29E80890004C873A /* TallyDashboardView.swift in Sources */,
 				EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */,
 				65934D4E29EFDEE400F3D2F1 /* LoginView.swift in Sources */,
+				6527DBFA29F7A1CB00556BE4 /* LoginButtonView.swift in Sources */,
 				65407BDA29EEB7CF00C5EAB6 /* EurovisionService.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,

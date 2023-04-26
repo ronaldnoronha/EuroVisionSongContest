@@ -34,9 +34,13 @@ enum RequestError: Error {
 //    case put = "PUT"
 //}
 
-final class EurovisionService {
-    static func login(name: String, password: String) async throws -> Representation {
-        let url = URL(string: "http://localhost:8080/login")
+class EurovisionManager: ObservableObject {
+    @Published var isLoggedIn = false
+    @Published var country: String?
+    @Published var isUnsuccessfulLogin = false
+    
+    func login(name: String, password: String) async throws {
+        let url = URL(string: "https://3ad7-111-220-61-208.ngrok-free.app/login")
         let queryItems = [
             URLQueryItem(name: "name", value: name),
             URLQueryItem(name: "password", value: password)
@@ -45,10 +49,23 @@ final class EurovisionService {
             throw RequestError.invalidURL
         }
 
-        
         let (data, _) = try await URLSession.shared.data(from: newURL)
-        
-        let result = try JSONDecoder().decode(Representation.self, from: data)
-        return result
+        do {
+            let response = try JSONDecoder().decode(RepresentationResponse.self, from: data)
+            DispatchQueue.main.async {
+                self.country = response.country
+                self.isUnsuccessfulLogin = false
+                self.isLoggedIn = true
+            }
+        } catch {
+            self.isUnsuccessfulLogin = true
+            self.isLoggedIn = false
+        }
     }
+    
+    func signup() {}
+    
+    func submitVotes() {}
+    
+    func retrieveVote() {}
 }

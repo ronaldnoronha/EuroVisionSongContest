@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Representation: Codable {
+struct RepresentationResponse: Codable {
     let country: String
 }

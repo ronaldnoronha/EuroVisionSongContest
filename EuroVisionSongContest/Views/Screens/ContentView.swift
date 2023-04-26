@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @StateObject private var manager = EurovisionManager()
+    
     let gridColumns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -17,35 +19,26 @@ struct ContentView: View {
     ]
     var body: some View {
         NavigationStack {
-//            ScrollView {
-//                LazyVGrid(columns: gridColumns, spacing: 10) {
-//                    ForEach(participants, id: \.self) { country in
-//                        NavigationLink(destination: VotingView(country: country)) {
-//                            CountryButtonView(title: country)
-//                        }
+            if let country = manager.country, manager.isLoggedIn {
+                LoggedInView(country: country)
+            } else {
+                LoginView(loginManager: manager)
+            }
+
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    NavigationLink(destination: TallyDashboardView(), label: {Text("Tally")})
+//                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button("Reset") {
+//                        print("reset")
 //                    }
 //                }
 //            }
-            LoginView()
-            .background(
-                Image("eurovision")
-                    .resizable()
-                    .frame(maxWidth: 900, maxHeight: 900)
-                    .opacity(0.25)
-            )
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: TallyDashboardView(), label: {Text("Tally")})
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Reset") {
-                        print("reset")
-                    }
-                }
-            }
-            .navigationTitle("Choose your country")
-            .navigationBarTitleDisplayMode(.inline)
+//            .navigationTitle("Choose your country")
+//            .navigationBarTitleDisplayMode(.inline)
         }
+        
     }
 }
 
