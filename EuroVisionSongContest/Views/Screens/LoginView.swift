@@ -90,7 +90,9 @@ struct LoginView: View {
                     .padding()
                     
                     Button {
-                        print("Signup")
+                        Task {
+                            try await loginManager.signup(name: name, password: password)
+                        }
                     } label: {
                         Text("Signup")
                             .font(.title2)
@@ -100,9 +102,12 @@ struct LoginView: View {
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
                     .background(
+                        isLoginButtonDisabled ?
+                        LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
                         LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
                     )
                     .cornerRadius(20)
+                    .disabled(isLoginButtonDisabled)
                     .padding()
                 }
                 
@@ -114,6 +119,8 @@ struct LoginView: View {
                         .bold()
                         .foregroundColor(.red)
                 }
+                
+                
             }
         }
         .navigationTitle("Login")
