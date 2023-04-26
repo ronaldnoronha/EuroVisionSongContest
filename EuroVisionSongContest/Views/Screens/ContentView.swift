@@ -10,33 +10,18 @@ import CoreData
 
 struct ContentView: View {
     @StateObject private var manager = EurovisionManager()
-    
-    let gridColumns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+
     var body: some View {
         NavigationStack {
             if let country = manager.country, manager.isLoggedIn {
-                LoggedInView(country: country)
+                if manager.hasVoted {
+                    VotesSummaryView(country: country)
+                } else {
+                    VotingView(country: country)
+                }
             } else {
                 LoginView(loginManager: manager)
             }
-
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    NavigationLink(destination: TallyDashboardView(), label: {Text("Tally")})
-//                }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button("Reset") {
-//                        print("reset")
-//                    }
-//                }
-//            }
-//            .navigationTitle("Choose your country")
-//            .navigationBarTitleDisplayMode(.inline)
         }
         
     }

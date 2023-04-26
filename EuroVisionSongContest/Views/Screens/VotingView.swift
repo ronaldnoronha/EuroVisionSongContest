@@ -19,7 +19,6 @@ struct VotingView: View {
     @State private var showModal = false
     @State private var validVotes = false
     
-    
     let country: String
     
     var body: some View {

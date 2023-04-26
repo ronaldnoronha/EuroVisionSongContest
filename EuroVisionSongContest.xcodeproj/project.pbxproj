@@ -31,6 +31,7 @@
 		EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF22825238F00E63E33 /* Persistence.swift */; };
 		EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */; };
 		EAB9CD012825738000E63E33 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD002825738000E63E33 /* VotingView.swift */; };
+		EAFD54CD29F9EA7200F874BF /* VotesSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		EAB9CCF52825238F00E63E33 /* EuroVisionSongContest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EuroVisionSongContest.xcdatamodel; sourceTree = "<group>"; };
 		EAB9CD002825738000E63E33 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		EACC1BC328263A6B00EA1EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesSummaryView.swift; sourceTree = "<group>"; };
 		EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EuroVisionSongContest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				65934D4D29EFDEE400F3D2F1 /* LoginView.swift */,
 				65934D4F29EFDF9600F3D2F1 /* LoggedInView.swift */,
 				6583DC1229F7577000AC8026 /* ErrorView.swift */,
+				EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFD54CD29F9EA7200F874BF /* VotesSummaryView.swift in Sources */,
 				EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */,
 				EA3BCFDD29DA6D95009A68A9 /* CountryButtonView.swift in Sources */,
 				EAB6713F29DD6D100054E201 /* VoteCellView.swift in Sources */,

@@ -110,8 +110,7 @@ struct LoginView: View {
                     .disabled(isLoginButtonDisabled)
                     .padding()
                 }
-                
-                
+                                
                 if loginManager.isUnsuccessfulLogin {
                     Text("Wrong details! Try again")
                         .fontWeight(.heavy)
@@ -119,8 +118,6 @@ struct LoginView: View {
                         .bold()
                         .foregroundColor(.red)
                 }
-                
-                
             }
         }
         .navigationTitle("Login")

@@ -32,6 +32,7 @@ class EurovisionManager: ObservableObject {
     @Published var country: String?
     @Published var isUnsuccessfulLogin = false
     @Published var userSignupFailed = false
+    @Published var hasVoted = false
     
     enum Constants {
         static let api = "https://3ad7-111-220-61-208.ngrok-free.app"
@@ -39,11 +40,16 @@ class EurovisionManager: ObservableObject {
         static let signup = "/signup"
         static let votes = "/votes"
         static let submit = "/submit"
+        static let hasVoted = "/hasVoted"
     }
     
     struct SignupRequest: Encodable {
         let name: String
         let password: String
+    }
+    
+    struct HasVotedResponse: Codable {
+        let hasVoted: Bool
     }
     
     func login(name: String, password: String) async throws {
@@ -61,6 +67,7 @@ class EurovisionManager: ObservableObject {
         let (data, _) = try await URLSession.shared.data(from: url)
         do {
             let response = try JSONDecoder().decode(RepresentationResponse.self, from: data)
+            try await checkIfVoted(country: response.country)
             DispatchQueue.main.async {
                 self.country = response.country
                 self.isUnsuccessfulLogin = false
@@ -92,6 +99,7 @@ class EurovisionManager: ObservableObject {
             
         do {
             let response = try JSONDecoder().decode(RepresentationResponse.self, from: data)
+            try await checkIfVoted(country: response.country)
             DispatchQueue.main.async {
                 self.country = response.country
                 self.userSignupFailed = false
@@ -105,7 +113,24 @@ class EurovisionManager: ObservableObject {
         }
     }
     
+    func checkIfVoted(country: String) async throws {
+        var url = URLComponents(string: Constants.api)
+        url?.path = Constants.hasVoted
+        url?.queryItems = [URLQueryItem(name: "country", value: country)]
+        
+        guard let url = url?.url else {
+            throw RequestError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let response = try JSONDecoder().decode(HasVotedResponse.self, from: data)
+        DispatchQueue.main.async {
+            self.hasVoted = response.hasVoted
+        }
+    }
+    
     func submitVotes() {}
     
-    func retrieveVote() {}
+    func retrieveVotes() {}
 }
