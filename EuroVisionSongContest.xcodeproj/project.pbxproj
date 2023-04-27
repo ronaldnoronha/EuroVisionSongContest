@@ -15,7 +15,6 @@
 		6583DC1329F7577000AC8026 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583DC1229F7577000AC8026 /* ErrorView.swift */; };
 		65934D4E29EFDEE400F3D2F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4D29EFDEE400F3D2F1 /* LoginView.swift */; };
 		65934D5029EFDF9600F3D2F1 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4F29EFDF9600F3D2F1 /* LoggedInView.swift */; };
-		8AB5A1F2A6092B1E15E02F9C /* Pods_EuroVisionSongContest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */; };
 		EA3BCFDD29DA6D95009A68A9 /* CountryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFDC29DA6D95009A68A9 /* CountryButtonView.swift */; };
 		EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */ = {isa = PBXBuildFile; fileRef = EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */; };
 		EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFE029DAA00A009A68A9 /* SongModel.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D0B75652FBB402E4F345ADF /* Pods-EuroVisionSongContest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.release.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.release.xcconfig"; sourceTree = "<group>"; };
 		6527DBF929F7A1CB00556BE4 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		653F3CFC29E80890004C873A /* TallyDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyDashboardView.swift; sourceTree = "<group>"; };
 		653F3CFE29E80A2B004C873A /* TallyVotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyVotesView.swift; sourceTree = "<group>"; };
@@ -44,7 +42,6 @@
 		6583DC1229F7577000AC8026 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		65934D4D29EFDEE400F3D2F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65934D4F29EFDF9600F3D2F1 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
-		67966ED27303739551926E19 /* Pods-EuroVisionSongContest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EuroVisionSongContest.debug.xcconfig"; path = "Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest.debug.xcconfig"; sourceTree = "<group>"; };
 		EA3BCFDC29DA6D95009A68A9 /* CountryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryButtonView.swift; sourceTree = "<group>"; };
 		EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongEntries.json; sourceTree = "<group>"; };
 		EA3BCFE029DAA00A009A68A9 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		EAB9CD002825738000E63E33 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		EACC1BC328263A6B00EA1EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesSummaryView.swift; sourceTree = "<group>"; };
-		EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EuroVisionSongContest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,30 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AB5A1F2A6092B1E15E02F9C /* Pods_EuroVisionSongContest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04817C4298A8CE3D125A99FD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				67966ED27303739551926E19 /* Pods-EuroVisionSongContest.debug.xcconfig */,
-				3D0B75652FBB402E4F345ADF /* Pods-EuroVisionSongContest.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		2EE38D7C5160AAC7CF7D8A69 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EE53ED8540A86F7C1DFC4356 /* Pods_EuroVisionSongContest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		65934D4C29EFC84600F3D2F1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +132,6 @@
 			children = (
 				EAB9CCE82825238C00E63E33 /* EuroVisionSongContest */,
 				EAB9CCE72825238C00E63E33 /* Products */,
-				04817C4298A8CE3D125A99FD /* Pods */,
-				2EE38D7C5160AAC7CF7D8A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,11 +176,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAB9CCF92825238F00E63E33 /* Build configuration list for PBXNativeTarget "EuroVisionSongContest" */;
 			buildPhases = (
-				BB847367B81AF5AE9C52D81C /* [CP] Check Pods Manifest.lock */,
 				EAB9CCE22825238C00E63E33 /* Sources */,
 				EAB9CCE32825238C00E63E33 /* Frameworks */,
 				EAB9CCE42825238C00E63E33 /* Resources */,
-				5B32B84BBDB2AA6B9126ED68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,48 +234,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5B32B84BBDB2AA6B9126ED68 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EuroVisionSongContest/Pods-EuroVisionSongContest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB847367B81AF5AE9C52D81C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EuroVisionSongContest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAB9CCE22825238C00E63E33 /* Sources */ = {
@@ -453,7 +385,6 @@
 		};
 		EAB9CCFA2825238F00E63E33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67966ED27303739551926E19 /* Pods-EuroVisionSongContest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,7 +420,6 @@
 		};
 		EAB9CCFB2825238F00E63E33 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D0B75652FBB402E4F345ADF /* Pods-EuroVisionSongContest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
