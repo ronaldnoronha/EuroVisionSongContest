@@ -120,14 +120,17 @@ struct LoginView: View {
                 }
             }
         }
-        .navigationTitle("Login")
-        .navigationBarTitleDisplayMode(.inline)
         .background(
             Image("eurovision")
                 .resizable()
                 .frame(maxWidth: 900, maxHeight: 900)
                 .opacity(0.25)
         )
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Login").font(.headline)
+            }
+        }
         
         
     }

@@ -20,6 +20,7 @@ struct VotingView: View {
     @State private var validVotes = false
     
     let country: String
+    @ObservedObject var votingManager: EurovisionManager
     
     var body: some View {
         NavigationStack {
@@ -117,12 +118,18 @@ struct VotingView: View {
                 }
                 .disabled(!validVotes)
             }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Logout") {
+                    votingManager.logout()
+                }
+            }
         }
     }
 }
 
 struct VotingView_Previews: PreviewProvider {
+    static var manager = EurovisionManager()
     static var previews: some View {
-        VotingView(country: "australia")
+        VotingView(country: "australia", votingManager: manager)
     }
 }

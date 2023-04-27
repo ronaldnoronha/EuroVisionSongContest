@@ -133,4 +133,16 @@ class EurovisionManager: ObservableObject {
     func submitVotes() {}
     
     func retrieveVotes() {}
+    
+    func logout() {
+        isLoggedIn = false
+        setToDefault()
+    }
+    
+    func setToDefault() {
+        isUnsuccessfulLogin = false
+        userSignupFailed = false
+        hasVoted = false
+        country = nil
+    }
 }
