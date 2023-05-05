@@ -33,6 +33,7 @@ class EurovisionManager: ObservableObject {
     @Published var isUnsuccessfulLogin = false
     @Published var userSignupFailed = false
     @Published var hasVoted = false
+    @Published var votes: Vote?
     
     enum Constants {
         static let api = "https://eurovision.loca.lt"
@@ -41,6 +42,7 @@ class EurovisionManager: ObservableObject {
         static let votes = "/votes"
         static let submit = "/submit"
         static let hasVoted = "/hasVoted"
+        static let getVotes = "/getVotes"
     }
     
     struct SignupRequest: Encodable {
@@ -67,12 +69,10 @@ class EurovisionManager: ObservableObject {
         let (data, _) = try await URLSession.shared.data(from: url)
         do {
             let response = try JSONDecoder().decode(RepresentationResponse.self, from: data)
-            try await checkIfVoted(country: response.country)
-            DispatchQueue.main.async {
-                self.country = response.country
-                self.isUnsuccessfulLogin = false
-                self.isLoggedIn = true
-            }
+            country = response.country
+            isUnsuccessfulLogin = false
+            isLoggedIn = true
+            try await checkIfVoted()
         } catch {
             DispatchQueue.main.async {
                 self.isUnsuccessfulLogin = true
@@ -99,7 +99,6 @@ class EurovisionManager: ObservableObject {
             
         do {
             let response = try JSONDecoder().decode(RepresentationResponse.self, from: data)
-            try await checkIfVoted(country: response.country)
             DispatchQueue.main.async {
                 self.country = response.country
                 self.userSignupFailed = false
@@ -113,7 +112,11 @@ class EurovisionManager: ObservableObject {
         }
     }
     
-    func checkIfVoted(country: String) async throws {
+    func checkIfVoted() async throws {
+        guard let country = country else {
+            throw RequestError.noResponse
+        }
+        
         var url = URLComponents(string: Constants.api)
         url?.path = Constants.hasVoted
         url?.queryItems = [URLQueryItem(name: "country", value: country)]
@@ -132,7 +135,24 @@ class EurovisionManager: ObservableObject {
     
     func submitVotes() {}
     
-    func retrieveVotes() {}
+    func retrieveVotes() async throws {
+        guard let country = country else {
+            throw RequestError.noResponse
+        }
+        
+        var url = URLComponents(string: Constants.api)
+        url?.path = Constants.getVotes
+        url?.queryItems = [URLQueryItem(name: "country", value: country)]
+        
+        guard let url = url?.url else {
+            throw RequestError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let response = try JSONDecoder().decode(Vote.self, from: data)
+        votes = response
+    }
     
     func logout() {
         isLoggedIn = false

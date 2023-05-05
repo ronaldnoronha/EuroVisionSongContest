@@ -91,7 +91,7 @@ struct LoginView: View {
                     
                     Button {
                         Task {
-                            try await loginManager.signup(name: name, password: password)
+                            try await loginManager.signup(name: name, password: password)                            
                         }
                     } label: {
                         Text("Signup")
@@ -113,6 +113,14 @@ struct LoginView: View {
                                 
                 if loginManager.isUnsuccessfulLogin {
                     Text("Wrong details! Try again")
+                        .fontWeight(.heavy)
+                        .italic()
+                        .bold()
+                        .foregroundColor(.red)
+                }
+                
+                if loginManager.userSignupFailed {
+                    Text("User already exists")
                         .fontWeight(.heavy)
                         .italic()
                         .bold()

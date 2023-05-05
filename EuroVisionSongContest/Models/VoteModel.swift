@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Vote {
+struct Vote: Codable {
     let delegate: String
     let country: String
     let points12: String

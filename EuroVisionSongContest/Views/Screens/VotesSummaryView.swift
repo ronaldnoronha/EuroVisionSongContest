@@ -10,9 +10,34 @@ import SwiftUI
 struct VotesSummaryView: View {
     let country: String
     @ObservedObject var votingManager: EurovisionManager
+        
     var body: some View {
         NavigationStack {
-            Text("Votes Summary View for \(country)")
+            if let votes = votingManager.votes {
+                List{
+                    Section {
+                        Text("Delegate: \(votes.delegate)")
+                    }
+                    
+                    Section {
+                        Text("12 Points: \(votes.points12)")
+                        Text("10 Points: \(votes.points10)")
+                        Text("8 Points: \(votes.points8)")
+                        Text("7 Points: \(votes.points7)")
+                        Text("6 Points: \(votes.points6)")
+                        Text("5 Points: \(votes.points5)")
+                        Text("4 Points: \(votes.points4)")
+                        Text("3 Points: \(votes.points3)")
+                        Text("2 Points: \(votes.points2)")
+                        Text("1 Points: \(votes.points1)")
+                    }                    
+                }
+            }
+        }
+        .onAppear {
+            Task {
+                try await votingManager.retrieveVotes()
+            }
         }
         .background(
             Image("eurovision")

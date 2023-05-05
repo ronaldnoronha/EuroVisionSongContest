@@ -23,7 +23,6 @@ struct ContentView: View {
                 LoginView(loginManager: manager)
             }
         }
-        
     }
 }
 

@@ -25,13 +25,6 @@ struct VotingView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Picker(selection: $selectedDelegate, label: Text("Delegate")) {
-                        ForEach(delegates, id:\.self) { option in
-                            Text(option)
-                        }
-                    }
-                } // :SECTION
                 
                 Section {
                     Text("Add your points")
