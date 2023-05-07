@@ -12,20 +12,26 @@ struct VotingView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    @State private var selectedDelegate: String = delegates[0]
+    let country: String
+    @ObservedObject var votingManager: EurovisionManager
+    let songs: [Song]
+    
     @State private var points: [Int] = [12,10,8,7,6,5,4,3,2,1,0]
-    @State private var selectedNumbers: [Int] = Array(repeating: 0, count: songs.count)
+    @State private var selectedNumbers: [Int]
     @State private var isYouTubeLinkOpened = false
     @State private var showModal = false
     @State private var validVotes = false
     
-    let country: String
-    @ObservedObject var votingManager: EurovisionManager
-    
+    init(country: String, votingManager: EurovisionManager, songs: [Song]) {
+        self.country = country
+        self.votingManager = votingManager
+        self.songs = songs
+        _selectedNumbers = State(initialValue: [Int](repeating: 0, count: songs.count))
+    }
+
     var body: some View {
         NavigationStack {
             Form {
-                
                 Section {
                     Text("Add your points")
                         .font(.headline)
@@ -86,27 +92,29 @@ struct VotingView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
-                    let votes = Votes(context: managedObjectContext)
-                    votes.delegate = selectedDelegate
-                    votes.country = country
-                    votes.points12 = songs[selectedNumbers.firstIndex(of: 12)!].country
-                    votes.points10 = songs[selectedNumbers.firstIndex(of: 10)!].country
-                    votes.points8 = songs[selectedNumbers.firstIndex(of: 8)!].country
-                    votes.points7 = songs[selectedNumbers.firstIndex(of: 7)!].country
-                    votes.points6 = songs[selectedNumbers.firstIndex(of: 6)!].country
-                    votes.points5 = songs[selectedNumbers.firstIndex(of: 5)!].country
-                    votes.points4 = songs[selectedNumbers.firstIndex(of: 4)!].country
-                    votes.points3 = songs[selectedNumbers.firstIndex(of: 3)!].country
-                    votes.points2 = songs[selectedNumbers.firstIndex(of: 2)!].country
-                    votes.points1 = songs[selectedNumbers.firstIndex(of: 1)!].country
+                Button("Submit") {
+//                    let votes = Votes(context: managedObjectContext)
+//                    votes.delegate = votingManager.loginResponse?.delegate
+//                    votes.country = country
+//                    votes.points12 = songs[selectedNumbers.firstIndex(of: 12)!].country
+//                    votes.points10 = songs[selectedNumbers.firstIndex(of: 10)!].country
+//                    votes.points8 = songs[selectedNumbers.firstIndex(of: 8)!].country
+//                    votes.points7 = songs[selectedNumbers.firstIndex(of: 7)!].country
+//                    votes.points6 = songs[selectedNumbers.firstIndex(of: 6)!].country
+//                    votes.points5 = songs[selectedNumbers.firstIndex(of: 5)!].country
+//                    votes.points4 = songs[selectedNumbers.firstIndex(of: 4)!].country
+//                    votes.points3 = songs[selectedNumbers.firstIndex(of: 3)!].country
+//                    votes.points2 = songs[selectedNumbers.firstIndex(of: 2)!].country
+//                    votes.points1 = songs[selectedNumbers.firstIndex(of: 1)!].country
+//
+//                    do {
+//                        try managedObjectContext.save()
+//                    } catch {
+//                        let nsError = error as NSError
+//                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//                    }
                     
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        let nsError = error as NSError
-                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
+                    // Add service call to submit votes
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .disabled(!validVotes)
@@ -123,6 +131,6 @@ struct VotingView: View {
 struct VotingView_Previews: PreviewProvider {
     static var manager = EurovisionManager()
     static var previews: some View {
-        VotingView(country: "australia", votingManager: manager)
+        VotingView(country: "australia", votingManager: manager, songs: getSongEntries(country: "australia"))
     }
 }

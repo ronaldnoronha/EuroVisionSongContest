@@ -51,16 +51,7 @@ let participants: [String] = [
     "united-kingdom"
 ]
 
-let delegates: [String] = [
-    "Aarushi",
-    "Claudio",
-    "Harish",
-    "Jordy",
-    "Ron",
-    "Tony"
-]
-
-func getSongEntries() -> [Song] {
+func getSongEntries(country: String) -> [Song] {
     guard let fileUrl = Bundle.main.url(forResource: "SongEntries", withExtension: "json") else  {
         fatalError("Couldn't find file in app bundle")
     }
@@ -68,14 +59,12 @@ func getSongEntries() -> [Song] {
     do {
         let jsonData = try Data(contentsOf: fileUrl)
         let decoder = JSONDecoder()
-        let songs = try decoder.decode([Song].self, from: jsonData)
+        var songs = try decoder.decode([Song].self, from: jsonData)
+        songs = songs.filter { $0.country != country }
         return songs
     } catch {
         fatalError("Couldn't decode object from JSON: \(error)")
     }
 }
-
-var songs: [Song] = getSongEntries()
-
 
 

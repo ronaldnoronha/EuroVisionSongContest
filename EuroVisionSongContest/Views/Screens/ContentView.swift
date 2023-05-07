@@ -13,11 +13,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            if let country = manager.country, manager.isLoggedIn {
-                if manager.hasVoted {
-                    VotesSummaryView(country: country, votingManager: manager)
+            if let loginResponse = manager.loginResponse,
+                manager.isLoggedIn {
+                if loginResponse.hasVoted {
+                    VotesSummaryView(country: loginResponse.country, votingManager: manager)
                 } else {
-                    VotingView(country: country, votingManager: manager)
+                    VotingView(country: loginResponse.country, votingManager: manager, songs: manager.loginResponse!.songs)
                 }
             } else {
                 LoginView(loginManager: manager)

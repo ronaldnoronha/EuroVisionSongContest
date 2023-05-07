@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct RepresentationResponse: Codable {
+struct LoginResponse: Codable {
     let country: String
+    let delegate: String
+    let hasVoted: Bool
+    let vote: Vote?
+    let songs: [Song]
 }

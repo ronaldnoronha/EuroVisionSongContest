@@ -26,7 +26,7 @@ struct SongCellView: View {
 
 struct SongCellView_Previews: PreviewProvider {
     static var previews: some View {
-        SongCellView(song: getSongEntries()[0])
+        SongCellView(song: getSongEntries(country: "australia")[0])
     }
 }
  

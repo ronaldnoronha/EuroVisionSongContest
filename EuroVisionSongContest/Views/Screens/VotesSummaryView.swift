@@ -13,7 +13,7 @@ struct VotesSummaryView: View {
         
     var body: some View {
         NavigationStack {
-            if let votes = votingManager.votes {
+            if let votes = votingManager.loginResponse?.vote {
                 List{
                     Section {
                         Text("Delegate: \(votes.delegate)")
@@ -32,11 +32,6 @@ struct VotesSummaryView: View {
                         Text("1 Points: \(votes.points1)")
                     }                    
                 }
-            }
-        }
-        .onAppear {
-            Task {
-                try await votingManager.retrieveVotes()
             }
         }
         .background(
