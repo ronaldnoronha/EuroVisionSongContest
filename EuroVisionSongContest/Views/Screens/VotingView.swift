@@ -9,7 +9,6 @@ import SwiftUI
 import SafariServices
 
 struct VotingView: View {
-    @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     
     let country: String
@@ -32,11 +31,15 @@ struct VotingView: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section{
+                    Text("Delegate: \(votingManager.loginResponse?.delegate ?? "")")
+                }
+                
                 Section {
                     Text("Add your points")
                         .font(.headline)
                         .padding()
-
+                    
                     if points.count - Set(selectedNumbers).count == 0 {
                         Text("If finalised please submit votes")
                             .font(.callout)
@@ -93,29 +96,25 @@ struct VotingView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Submit") {
-//                    let votes = Votes(context: managedObjectContext)
-//                    votes.delegate = votingManager.loginResponse?.delegate
-//                    votes.country = country
-//                    votes.points12 = songs[selectedNumbers.firstIndex(of: 12)!].country
-//                    votes.points10 = songs[selectedNumbers.firstIndex(of: 10)!].country
-//                    votes.points8 = songs[selectedNumbers.firstIndex(of: 8)!].country
-//                    votes.points7 = songs[selectedNumbers.firstIndex(of: 7)!].country
-//                    votes.points6 = songs[selectedNumbers.firstIndex(of: 6)!].country
-//                    votes.points5 = songs[selectedNumbers.firstIndex(of: 5)!].country
-//                    votes.points4 = songs[selectedNumbers.firstIndex(of: 4)!].country
-//                    votes.points3 = songs[selectedNumbers.firstIndex(of: 3)!].country
-//                    votes.points2 = songs[selectedNumbers.firstIndex(of: 2)!].country
-//                    votes.points1 = songs[selectedNumbers.firstIndex(of: 1)!].country
-//
-//                    do {
-//                        try managedObjectContext.save()
-//                    } catch {
-//                        let nsError = error as NSError
-//                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//                    }
-                    
-                    // Add service call to submit votes
-                    self.presentationMode.wrappedValue.dismiss()
+                    let vote = Vote(
+                        delegate: votingManager.loginResponse?.delegate ?? "",
+                        country: country,
+                        points12: songs[selectedNumbers.firstIndex(of: 12)!].country,
+                        points10: songs[selectedNumbers.firstIndex(of: 10)!].country,
+                        points8: songs[selectedNumbers.firstIndex(of: 8)!].country,
+                        points7: songs[selectedNumbers.firstIndex(of: 7)!].country,
+                        points6: songs[selectedNumbers.firstIndex(of: 6)!].country,
+                        points5: songs[selectedNumbers.firstIndex(of: 5)!].country,
+                        points4: songs[selectedNumbers.firstIndex(of: 4)!].country,
+                        points3: songs[selectedNumbers.firstIndex(of: 3)!].country,
+                        points2: songs[selectedNumbers.firstIndex(of: 2)!].country,
+                        points1: songs[selectedNumbers.firstIndex(of: 1)!].country
+                    )
+                    Task {
+                        try await votingManager.submitVotes(vote: vote)
+                        votingManager.logout()
+                        //TODO: - Login response update after submitting vote
+                    }
                 }
                 .disabled(!validVotes)
             }

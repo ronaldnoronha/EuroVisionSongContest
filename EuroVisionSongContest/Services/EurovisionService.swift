@@ -35,7 +35,7 @@ class EurovisionManager: ObservableObject {
     @Published var loginResponse: LoginResponse?
         
     enum Constants {
-        static let api = "https://eurovision.loca.lt"
+        static let api = "https://eurovision1.loca.lt"
         static let login = "/login"
         static let signup = "/signup"
         static let votes = "/votes"
@@ -108,7 +108,22 @@ class EurovisionManager: ObservableObject {
         }
     }
     
-    func submitVotes() {}
+    func submitVotes(vote: Vote) async throws {
+        var url = URLComponents(string: Constants.api)
+        url?.path = Constants.submit
+        
+        guard let url = url?.url else {
+            throw RequestError.invalidURL
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        let encoder = JSONEncoder()
+        let requestData = try encoder.encode(vote)
+        
+        try await URLSession.shared.upload(for: request, from: requestData)
+    }
     
     func logout() {
         isLoggedIn = false
