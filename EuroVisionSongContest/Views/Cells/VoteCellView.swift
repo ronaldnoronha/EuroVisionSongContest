@@ -10,13 +10,14 @@ import SwiftUI
 struct VoteCellView: View {
     @State private var isYouTubeLinkOpened = false
         @State private var isYouTubeAppNotInstalledAlertPresented = false
-        
+    let impactMed = UIImpactFeedbackGenerator(style: .medium)
         var body: some View {
             VStack {
                 // List of cells
                 List {
                     ForEach(0..<10, id: \.self) { index in
                         Button(action: {
+                            impactMed.impactOccurred()
                             openYouTubeLink()
                         }) {
                             Text("Cell \(index)")

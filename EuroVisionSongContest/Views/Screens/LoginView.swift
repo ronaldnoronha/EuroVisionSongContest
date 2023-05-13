@@ -13,6 +13,7 @@ struct LoginView: View {
     @State var showPassword = false
     
     @ObservedObject var loginManager: EurovisionManager
+    let impact = UIImpactFeedbackGenerator(style: .heavy)
 
     var isLoginButtonDisabled: Bool {
         [name, password].contains(where: \.isEmpty)
@@ -69,6 +70,7 @@ struct LoginView: View {
                 Spacer()
                 HStack {
                     Button {
+                        impact.impactOccurred()
                         Task {
                             try await loginManager.login(name: name, password: password)
                         }
@@ -90,6 +92,7 @@ struct LoginView: View {
                     .padding()
                     
                     Button {
+                        impact.impactOccurred()
                         Task {
                             try await loginManager.signup(name: name, password: password)                            
                         }
