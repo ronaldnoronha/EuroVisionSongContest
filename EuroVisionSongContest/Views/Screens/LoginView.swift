@@ -142,8 +142,6 @@ struct LoginView: View {
                 Text("Login").font(.headline)
             }
         }
-        
-        
     }
 }
 

@@ -19,7 +19,9 @@ struct VotingView: View {
     @State private var selectedNumbers: [Int]
     @State private var isYouTubeLinkOpened = false
     @State private var showModal = false
+    var songVideoId: String?
     @State private var validVotes = false
+    let impact = UIImpactFeedbackGenerator(style: .heavy)
     
     init(country: String, votingManager: EurovisionManager, songs: [Song]) {
         self.country = country
@@ -68,8 +70,10 @@ struct VotingView: View {
                                 }
                             }
                             .sheet(isPresented: $showModal) {
-                                YouTubePlayerView(videoId: songs[index].link)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                if let songVideoId = songVideoId {
+                                    YouTubePlayerView(videoId: songVideoId)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                }
                             }
                             .onChange(of: selectedNumbers) { _ in
                                 validVotes = points.count == Set(selectedNumbers).count ? true : false                                
@@ -78,13 +82,13 @@ struct VotingView: View {
                     } // :LIST
                 } // :SECTION
             } // :FORM
+            .background(
+                Image("eurovision")
+                    .resizable()
+                    .frame(maxWidth: 900, maxHeight: 900)
+                    .opacity(0.25)
+            )
         } // :NAVIGATION
-        .background(
-            Image("eurovision")
-                .resizable()
-                .frame(maxWidth: 900, maxHeight: 900)
-                .opacity(0.25)
-        )
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -96,6 +100,7 @@ struct VotingView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Submit") {
+                    impact.impactOccurred()
                     let vote = Vote(
                         delegate: votingManager.loginResponse?.delegate ?? "",
                         country: country,
@@ -112,7 +117,6 @@ struct VotingView: View {
                     )
                     Task {
                         try await votingManager.submitVotes(vote: vote)
-                        votingManager.logout()
                         //TODO: - Login response update after submitting vote
                     }
                 }
@@ -120,6 +124,7 @@ struct VotingView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Logout") {
+                    impact.impactOccurred()
                     votingManager.logout()
                 }
             }

@@ -10,36 +10,41 @@ import SwiftUI
 struct VotesSummaryView: View {
     let country: String
     @ObservedObject var votingManager: EurovisionManager
-        
+    let impact = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         NavigationStack {
             if let votes = votingManager.loginResponse?.vote {
                 List{
                     Section {
-                        Text("Delegate: \(votes.delegate)")
+                        HStack{
+                            Text("Delegate:")
+                            Spacer()
+                            Text("\(votes.delegate.capitalized)")
+                                    
+                        }
                     }
-                    
                     Section {
-                        Text("12 Points: \(votes.points12)")
-                        Text("10 Points: \(votes.points10)")
-                        Text("8 Points: \(votes.points8)")
-                        Text("7 Points: \(votes.points7)")
-                        Text("6 Points: \(votes.points6)")
-                        Text("5 Points: \(votes.points5)")
-                        Text("4 Points: \(votes.points4)")
-                        Text("3 Points: \(votes.points3)")
-                        Text("2 Points: \(votes.points2)")
-                        Text("1 Points: \(votes.points1)")
-                    }                    
+                        VoteSummaryCellView(points: 12, country: votes.points12)
+                        VoteSummaryCellView(points: 10, country: votes.points10)
+                        VoteSummaryCellView(points: 8, country: votes.points8)
+                        VoteSummaryCellView(points: 7, country: votes.points7)
+                        VoteSummaryCellView(points: 6, country: votes.points6)
+                        VoteSummaryCellView(points: 5, country: votes.points5)
+                        VoteSummaryCellView(points: 4, country: votes.points4)
+                        VoteSummaryCellView(points: 3, country: votes.points3)
+                        VoteSummaryCellView(points: 2, country: votes.points2)
+                        VoteSummaryCellView(points: 1, country: votes.points1)
+                    }
                 }
-            }
+                .background(
+                    Image("eurovision")
+                        .resizable()
+                        .frame(maxWidth: 900, maxHeight: 900)
+                        .opacity(0.25)
+                )
+
+            }            
         }
-        .background(
-            Image("eurovision")
-                .resizable()
-                .frame(maxWidth: 900, maxHeight: 900)
-                .opacity(0.25)
-        )
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -51,6 +56,7 @@ struct VotesSummaryView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Logout") {
+                    impact.impactOccurred()
                     votingManager.logout()
                 }
             }

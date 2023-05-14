@@ -11,9 +11,15 @@ struct SongCellView: View {
     var song: Song
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(song.country.uppercased())")
-                .font(.subheadline)
-                .padding()
+            HStack {
+                Image(song.country)
+                    .resizable()
+                    .frame(maxWidth: 50, maxHeight: 50)
+                Text("\(song.country.uppercased())")
+                    .font(.subheadline)
+                    .padding()
+            }
+            
             HStack {
                 Spacer()
                 Text("\(song.songName)")

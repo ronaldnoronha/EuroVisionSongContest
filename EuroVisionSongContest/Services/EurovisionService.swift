@@ -35,7 +35,7 @@ class EurovisionManager: ObservableObject {
     @Published var loginResponse: LoginResponse?
         
     enum Constants {
-        static let api = "https://eurovision1.loca.lt"
+        static let api = "https://94b0-111-220-61-208.ngrok-free.app"
         static let login = "/login"
         static let signup = "/signup"
         static let votes = "/votes"
@@ -123,6 +123,13 @@ class EurovisionManager: ObservableObject {
         let requestData = try encoder.encode(vote)
         
         try await URLSession.shared.upload(for: request, from: requestData)
+        loginResponse = LoginResponse(
+            country: loginResponse?.country ?? "",
+            delegate: loginResponse?.delegate ?? "",
+            hasVoted: true,
+            vote: vote,
+            songs: []
+        )
     }
     
     func logout() {
