@@ -32,62 +32,64 @@ struct VotingView: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                Section{
-                    Text("Delegate: \(votingManager.loginResponse?.delegate ?? "")")
-                }
-                
-                Section {
-                    Text("Add your points")
-                        .font(.headline)
-                        .padding()
-                    
-                    if points.count - Set(selectedNumbers).count == 0 {
-                        Text("If finalised please submit votes")
-                            .font(.callout)
-                            .padding()
-                    } else {
-                        Text("Songs left to be selected: \(points.count - Set(selectedNumbers).count)")
-                            .font(.callout)
-                            .foregroundColor(Color.red)
-                            .padding()
-                    }
-                    
-                    List {
-                        ForEach(0..<songs.count, id:\.self) { index in
-                            Button {
-                                showModal = true
-                            } label: {
-                                HStack {
-                                    SongCellView(song: songs[index])
-                                    Picker("", selection: $selectedNumbers[index]) {
-                                        ForEach(points.filter { $0 == 0 || !selectedNumbers.contains($0) || $0 == selectedNumbers[index] }, id:\.self) { number in
-                                            Text("\(number)")
-                                        }
-                                    }
-                                    .pickerStyle(MenuPickerStyle())
-                                    Spacer()
-                                }
-                            }
-                            .sheet(isPresented: $showModal) {
-                                if let songVideoId = songVideoId {
-                                    YouTubePlayerView(videoId: songVideoId)
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                }
-                            }
-                            .onChange(of: selectedNumbers) { _ in
-                                validVotes = points.count == Set(selectedNumbers).count ? true : false                                
-                            }
-                        }
-                    } // :LIST
-                } // :SECTION
-            } // :FORM
-            .background(
-                Image("eurovision")
+            ZStack {
+                Image("eurovision").resizable()
                     .resizable()
                     .frame(maxWidth: 900, maxHeight: 900)
                     .opacity(0.25)
-            )
+                
+                Form {
+                    Section{
+                        Text("Delegate: \(votingManager.loginResponse?.delegate ?? "")")
+                    }
+                    
+                    Section {
+                        Text("Add your points")
+                            .font(.headline)
+                            .padding()
+                        
+                        if points.count - Set(selectedNumbers).count == 0 {
+                            Text("If finalised please submit votes")
+                                .font(.callout)
+                                .padding()
+                        } else {
+                            Text("Songs left to be selected: \(points.count - Set(selectedNumbers).count)")
+                                .font(.callout)
+                                .foregroundColor(Color.red)
+                                .padding()
+                        }
+                        
+                        List {
+                            ForEach(0..<songs.count, id:\.self) { index in
+                                Button {
+                                    showModal = true
+                                } label: {
+                                    HStack {
+                                        SongCellView(song: songs[index])
+                                        Picker("", selection: $selectedNumbers[index]) {
+                                            ForEach(points.filter { $0 == 0 || !selectedNumbers.contains($0) || $0 == selectedNumbers[index] }, id:\.self) { number in
+                                                Text("\(number)")
+                                            }
+                                        }
+                                        .pickerStyle(MenuPickerStyle())
+                                        Spacer()
+                                    }
+                                }
+                                .sheet(isPresented: $showModal) {
+                                    if let songVideoId = songVideoId {
+                                        YouTubePlayerView(videoId: songVideoId)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    }
+                                }
+                                .onChange(of: selectedNumbers) { _ in
+                                    validVotes = points.count == Set(selectedNumbers).count ? true : false
+                                }
+                            }
+                        } // :LIST
+                    } // :SECTION
+                } // :FORM
+                .opacity(0.85)
+            }
         } // :NAVIGATION
         .toolbar {
             ToolbarItem(placement: .principal) {

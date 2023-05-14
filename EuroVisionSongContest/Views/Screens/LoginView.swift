@@ -21,122 +21,124 @@ struct LoginView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
-                Spacer()
+            ZStack {
+                Image("eurovision").resizable()
+                    .resizable()
+                    .frame(maxWidth: 900, maxHeight: 900)
+                    .opacity(0.25)
                 
-                TextField(
-                    "Name",
-                    text: $name,
-                    prompt: Text("Login").foregroundColor(.blue)
-                )
-                .padding(10)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.blue, lineWidth: 2)
-                }
-                .padding(.horizontal)
-                
-                HStack {
-                    Group {
-                        if showPassword {
-                            TextField(
-                                "Password",
-                                text: $password,
-                                prompt: Text("Password").foregroundColor(.red)
-                            )
-                        } else {
-                            SecureField(
-                                "Password",
-                                text: $password,
-                                prompt: Text("Password").foregroundColor(.red)
-                            )
-                        }
-                    }
+                VStack(alignment: .leading) {
+                    Spacer()
+                    
+                    TextField(
+                        "Name",
+                        text: $name,
+                        prompt: Text("Login").foregroundColor(.blue)
+                    )
                     .padding(10)
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(.red, lineWidth: 2)
+                            .stroke(.blue, lineWidth: 2)
                     }
+                    .padding(.horizontal)
                     
-                    Button {
-                        showPassword.toggle()
-                    } label:  {
-                        Image(systemName: showPassword ? "eye.slash" : "eye")
+                    HStack {
+                        Group {
+                            if showPassword {
+                                TextField(
+                                    "Password",
+                                    text: $password,
+                                    prompt: Text("Password").foregroundColor(.red)
+                                )
+                            } else {
+                                SecureField(
+                                    "Password",
+                                    text: $password,
+                                    prompt: Text("Password").foregroundColor(.red)
+                                )
+                            }
+                        }
+                        .padding(10)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.red, lineWidth: 2)
+                        }
+                        
+                        Button {
+                            showPassword.toggle()
+                        } label:  {
+                            Image(systemName: showPassword ? "eye.slash" : "eye")
+                                .foregroundColor(.red)
+                        }
+                    } //: HSTACK
+                    .padding(.horizontal)
+                    
+                    Spacer()
+                    HStack {
+                        Button {
+                            impact.impactOccurred()
+                            Task {
+                                try await loginManager.login(name: name, password: password)
+                            }
+                        } label: {
+                            Text("Login")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            isLoginButtonDisabled ?
+                            LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                                LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .disabled(isLoginButtonDisabled)
+                        .padding()
+                        
+                        Button {
+                            impact.impactOccurred()
+                            Task {
+                                try await loginManager.signup(name: name, password: password)
+                            }
+                        } label: {
+                            Text("Signup")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            isLoginButtonDisabled ?
+                            LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                            LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .disabled(isLoginButtonDisabled)
+                        .padding()
+                    }
+                                    
+                    if loginManager.isUnsuccessfulLogin {
+                        Text("Wrong details! Try again")
+                            .fontWeight(.heavy)
+                            .italic()
+                            .bold()
                             .foregroundColor(.red)
                     }
-                } //: HSTACK
-                .padding(.horizontal)
-                
-                Spacer()
-                HStack {
-                    Button {
-                        impact.impactOccurred()
-                        Task {
-                            try await loginManager.login(name: name, password: password)
-                        }
-                    } label: {
-                        Text("Login")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                    }
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        isLoginButtonDisabled ?
-                        LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
-                            LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    )
-                    .cornerRadius(20)
-                    .disabled(isLoginButtonDisabled)
-                    .padding()
                     
-                    Button {
-                        impact.impactOccurred()
-                        Task {
-                            try await loginManager.signup(name: name, password: password)                            
-                        }
-                    } label: {
-                        Text("Signup")
-                            .font(.title2)
+                    if loginManager.userSignupFailed {
+                        Text("User already exists")
+                            .fontWeight(.heavy)
+                            .italic()
                             .bold()
-                            .foregroundColor(.white)
+                            .foregroundColor(.red)
                     }
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        isLoginButtonDisabled ?
-                        LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
-                        LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    )
-                    .cornerRadius(20)
-                    .disabled(isLoginButtonDisabled)
-                    .padding()
                 }
-                                
-                if loginManager.isUnsuccessfulLogin {
-                    Text("Wrong details! Try again")
-                        .fontWeight(.heavy)
-                        .italic()
-                        .bold()
-                        .foregroundColor(.red)
-                }
-                
-                if loginManager.userSignupFailed {
-                    Text("User already exists")
-                        .fontWeight(.heavy)
-                        .italic()
-                        .bold()
-                        .foregroundColor(.red)
-                }
+                .opacity(0.85)
             }
         }
-        .background(
-            Image("eurovision")
-                .resizable()
-                .frame(maxWidth: 900, maxHeight: 900)
-                .opacity(0.25)
-        )
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("Login").font(.headline)

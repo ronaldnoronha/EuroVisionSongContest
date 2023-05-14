@@ -13,37 +13,39 @@ struct VotesSummaryView: View {
     let impact = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         NavigationStack {
-            if let votes = votingManager.loginResponse?.vote {
-                List{
-                    Section {
-                        HStack{
-                            Text("Delegate:")
-                            Spacer()
-                            Text("\(votes.delegate.capitalized)")
-                                    
+            ZStack {
+                Image("eurovision").resizable()
+                    .resizable()
+                    .frame(maxWidth: 900, maxHeight: 900)
+                    .opacity(0.25)
+                
+                if let votes = votingManager.loginResponse?.vote {
+                    List{
+                        Section {
+                            HStack{
+                                Text("Delegate:")
+                                Spacer()
+                                Text("\(votes.delegate.capitalized)")
+                                        
+                            }
+                        }
+                        Section {
+                            VoteSummaryCellView(points: 12, country: votes.points12)
+                            VoteSummaryCellView(points: 10, country: votes.points10)
+                            VoteSummaryCellView(points: 8, country: votes.points8)
+                            VoteSummaryCellView(points: 7, country: votes.points7)
+                            VoteSummaryCellView(points: 6, country: votes.points6)
+                            VoteSummaryCellView(points: 5, country: votes.points5)
+                            VoteSummaryCellView(points: 4, country: votes.points4)
+                            VoteSummaryCellView(points: 3, country: votes.points3)
+                            VoteSummaryCellView(points: 2, country: votes.points2)
+                            VoteSummaryCellView(points: 1, country: votes.points1)
                         }
                     }
-                    Section {
-                        VoteSummaryCellView(points: 12, country: votes.points12)
-                        VoteSummaryCellView(points: 10, country: votes.points10)
-                        VoteSummaryCellView(points: 8, country: votes.points8)
-                        VoteSummaryCellView(points: 7, country: votes.points7)
-                        VoteSummaryCellView(points: 6, country: votes.points6)
-                        VoteSummaryCellView(points: 5, country: votes.points5)
-                        VoteSummaryCellView(points: 4, country: votes.points4)
-                        VoteSummaryCellView(points: 3, country: votes.points3)
-                        VoteSummaryCellView(points: 2, country: votes.points2)
-                        VoteSummaryCellView(points: 1, country: votes.points1)
-                    }
+                    .opacity(0.85)
                 }
-                .background(
-                    Image("eurovision")
-                        .resizable()
-                        .frame(maxWidth: 900, maxHeight: 900)
-                        .opacity(0.25)
-                )
-
-            }            
+            }
+                        
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
