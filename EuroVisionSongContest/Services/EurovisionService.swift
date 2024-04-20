@@ -35,7 +35,7 @@ class EurovisionManager: ObservableObject {
     @Published var loginResponse: LoginResponse?
         
     enum Constants {
-        static let api = "https://94b0-111-220-61-208.ngrok-free.app"
+        static let api = "https://7618-122-150-149-200.ngrok-free.app"
         static let login = "/login"
         static let signup = "/signup"
         static let votes = "/votes"

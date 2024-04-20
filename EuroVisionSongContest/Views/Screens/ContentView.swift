@@ -5,24 +5,39 @@
 //  Created by Ronald Noronha on 6/5/2022.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
+
 
 struct ContentView: View {
-    @StateObject private var manager = EurovisionManager()
+    @EnvironmentObject private var manager: EurovisionManager
+    
+    @State private var selectedTab = 0
 
     var body: some View {
-        NavigationStack {
-            if let loginResponse = manager.loginResponse,
-                manager.isLoggedIn {
-                if loginResponse.hasVoted {
-                    VotesSummaryView(country: loginResponse.country, votingManager: manager)
+        TabView(selection: $selectedTab) {
+            NavigationStack {
+                if let loginResponse = manager.loginResponse,
+                    manager.isLoggedIn {
+                    if loginResponse.hasVoted {
+                        VotesSummaryView(country: loginResponse.country)
+                    } else {
+                        VotingView(country: loginResponse.country, songs: manager.loginResponse!.songs)
+                    }
                 } else {
-                    VotingView(country: loginResponse.country, votingManager: manager, songs: manager.loginResponse!.songs)
+                    LoginView()
                 }
-            } else {
-                LoginView(loginManager: manager)
             }
+            .tabItem {
+              Label("Home", systemImage: "house")
+            }
+            .tag(0)
+
+            Text("Settings View")
+            .tabItem {
+              Label("Settings", systemImage: "gear")
+            }
+            .tag(1)
         }
     }
 }
@@ -30,6 +45,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.landscapeLeft)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.landscapeLeft)
+            .environmentObject(EurovisionManager())
     }
 }
