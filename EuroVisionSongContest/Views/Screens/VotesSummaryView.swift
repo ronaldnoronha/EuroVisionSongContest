@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VotesSummaryView: View {
     let country: String
-    @ObservedObject var votingManager: EurovisionManager
+    @EnvironmentObject var votingManager: EurovisionManager
     let impact = UIImpactFeedbackGenerator(style: .heavy)
     var body: some View {
         NavigationStack {
@@ -67,8 +67,8 @@ struct VotesSummaryView: View {
 }
 
 struct VotesSummaryView_Previews: PreviewProvider {
-    static var manager = EurovisionManager()
     static var previews: some View {
-        VotesSummaryView(country: "Australia", votingManager: manager)
+        VotesSummaryView(country: "Australia")
+            .environmentObject(EurovisionManager())
     }
 }

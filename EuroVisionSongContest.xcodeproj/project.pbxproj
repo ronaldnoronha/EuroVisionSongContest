@@ -24,6 +24,8 @@
 		EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF22825238F00E63E33 /* Persistence.swift */; };
 		EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */; };
 		EAB9CD012825738000E63E33 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD002825738000E63E33 /* VotingView.swift */; };
+		EACF24F22BC9210C00E289DA /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF24F12BC9210C00E289DA /* IntroView.swift */; };
+		EAF0E7CB2BBA8A6D00053D92 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0E7CA2BBA8A6D00053D92 /* CodeScanner */; };
 		EAFD54CD29F9EA7200F874BF /* VotesSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,7 @@
 		EAB9CCF52825238F00E63E33 /* EuroVisionSongContest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EuroVisionSongContest.xcdatamodel; sourceTree = "<group>"; };
 		EAB9CD002825738000E63E33 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		EACC1BC328263A6B00EA1EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EACF24F12BC9210C00E289DA /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF0E7CB2BBA8A6D00053D92 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				65934D4D29EFDEE400F3D2F1 /* LoginView.swift */,
 				EAA9BF1B2A0FE6AD00125DE3 /* YouTubePlayerView.swift */,
 				EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */,
+				EACF24F12BC9210C00E289DA /* IntroView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -167,6 +172,9 @@
 			dependencies = (
 			);
 			name = EuroVisionSongContest;
+			packageProductDependencies = (
+				EAF0E7CA2BBA8A6D00053D92 /* CodeScanner */,
+			);
 			productName = EuroVisionSongContest;
 			productReference = EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +203,9 @@
 				Base,
 			);
 			mainGroup = EAB9CCDD2825238C00E63E33;
+			packageReferences = (
+				EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = EAB9CCE72825238C00E63E33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFD54CD29F9EA7200F874BF /* VotesSummaryView.swift in Sources */,
+				EACF24F22BC9210C00E289DA /* IntroView.swift in Sources */,
 				EAB9CCF62825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld in Sources */,
 				EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */,
 				EAB9CD012825738000E63E33 /* VotingView.swift in Sources */,
@@ -374,13 +386,14 @@
 				INFOPLIST_FILE = EuroVisionSongContest/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Eurovision voting app";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes for the backend URL";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,13 +425,14 @@
 				INFOPLIST_FILE = EuroVisionSongContest/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Eurovision voting app";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes for the backend URL";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +471,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EAF0E7CA2BBA8A6D00053D92 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EAB9CCF42825238F00E63E33 /* EuroVisionSongContest.xcdatamodeld */ = {

@@ -12,7 +12,7 @@ struct LoginView: View {
     @State private var password = ""
     @State var showPassword = false
     
-    @ObservedObject var loginManager: EurovisionManager
+    @EnvironmentObject var loginManager: EurovisionManager
     let impact = UIImpactFeedbackGenerator(style: .heavy)
 
     var isLoginButtonDisabled: Bool {
@@ -148,8 +148,8 @@ struct LoginView: View {
 }
 
 struct LoginView_Previews: PreviewProvider {
-    static var manager = EurovisionManager()
     static var previews: some View {
-        LoginView(loginManager: manager)
+        LoginView()
+            .environmentObject(EurovisionManager())
     }
 }

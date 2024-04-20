@@ -10,9 +10,9 @@ import SafariServices
 
 struct VotingView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var votingManager: EurovisionManager
     
     let country: String
-    @ObservedObject var votingManager: EurovisionManager
     let songs: [Song]
     
     @State private var points: [Int] = [12,10,8,7,6,5,4,3,2,1,0]
@@ -23,9 +23,8 @@ struct VotingView: View {
     @State private var validVotes = false
     let impact = UIImpactFeedbackGenerator(style: .heavy)
     
-    init(country: String, votingManager: EurovisionManager, songs: [Song]) {
+    init(country: String, songs: [Song]) {
         self.country = country
-        self.votingManager = votingManager
         self.songs = songs
         _selectedNumbers = State(initialValue: [Int](repeating: 0, count: songs.count))
     }
@@ -137,6 +136,6 @@ struct VotingView: View {
 struct VotingView_Previews: PreviewProvider {
     static var manager = EurovisionManager()
     static var previews: some View {
-        VotingView(country: "australia", votingManager: manager, songs: getSongEntries(country: "australia"))
+        VotingView(country: "australia", songs: getSongEntries(country: "australia"))
     }
 }
