@@ -5,7 +5,7 @@
 //  Created by Noronha, Ronald on 18/4/2023.
 //
 
-import Foundation
+import SwiftUI
 
 enum RequestError: Error {
     case decode
@@ -31,17 +31,21 @@ class EurovisionManager: ObservableObject {
     @Published var isLoggedIn = false
     @Published var isUnsuccessfulLogin = false
     @Published var userSignupFailed = false
+    @Published var isScannedURLCurrent = false
     
     @Published var loginResponse: LoginResponse?
-        
+    
+    @AppStorage("url", store: UserDefaults(suiteName: "com.eurovision"))
+    var scannedURL: String = ""
+
     enum Constants {
-        static let api = "https://7618-122-150-149-200.ngrok-free.app"
         static let login = "/login"
         static let signup = "/signup"
         static let votes = "/votes"
         static let submit = "/submit"
         static let hasVoted = "/hasVoted"
         static let getVotes = "/getVotes"
+        static let ping = "/ping"
     }
     
     struct SignupRequest: Encodable {
@@ -53,8 +57,41 @@ class EurovisionManager: ObservableObject {
         let hasVoted: Bool
     }
     
+    struct PongResponse: Codable {
+        let connection: Bool
+    }
+    
+    func setScannedURL(url: String) {
+        scannedURL = url
+        Task {
+            try await ping()
+        }
+    }
+
+    func ping() async throws {
+        var url = URLComponents(string: scannedURL)
+        url?.path = Constants.ping
+        
+        guard let url = url?.url else {
+            isScannedURLCurrent = false
+            scannedURL = ""
+            throw RequestError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        do {
+            let response = try JSONDecoder().decode(PongResponse.self, from: data)
+            if response.connection {
+                isScannedURLCurrent = true
+            }
+        } catch {
+            isScannedURLCurrent = false
+            scannedURL = ""
+        }
+    }
+
     func login(name: String, password: String) async throws {
-        var url = URLComponents(string: Constants.api)
+        var url = URLComponents(string: scannedURL)
         url?.path = Constants.login
         let queryItems = [
             URLQueryItem(name: "name", value: name),
@@ -80,7 +117,7 @@ class EurovisionManager: ObservableObject {
     }
     
     func signup(name: String, password: String) async throws {
-        var url = URLComponents(string: Constants.api)
+        var url = URLComponents(string: scannedURL)
         url?.path = Constants.signup
         
         guard let url = url?.url else {
@@ -109,7 +146,7 @@ class EurovisionManager: ObservableObject {
     }
     
     func submitVotes(vote: Vote) async throws {
-        var url = URLComponents(string: Constants.api)
+        var url = URLComponents(string: scannedURL)
         url?.path = Constants.submit
         
         guard let url = url?.url else {

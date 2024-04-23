@@ -119,12 +119,22 @@ struct LoginView: View {
                         .disabled(isLoginButtonDisabled)
                         .padding()
                     }
+                    
+                    if !loginManager.isScannedURLCurrent {
+                        Text("Not connected to server, scan the URL in Settings")
+                            .fontWeight(.heavy)
+                            .italic()
+                            .bold()
+                            .padding()
+                            .foregroundColor(.red)
+                    }
                                     
                     if loginManager.isUnsuccessfulLogin {
                         Text("Wrong details! Try again")
                             .fontWeight(.heavy)
                             .italic()
                             .bold()
+                            .padding()
                             .foregroundColor(.red)
                     }
                     
@@ -133,6 +143,7 @@ struct LoginView: View {
                             .fontWeight(.heavy)
                             .italic()
                             .bold()
+                            .padding()
                             .foregroundColor(.red)
                     }
                 }

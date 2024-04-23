@@ -10,6 +10,7 @@
 		65407BDA29EEB7CF00C5EAB6 /* EurovisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65407BD929EEB7CF00C5EAB6 /* EurovisionService.swift */; };
 		6583DC1129F6612300AC8026 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583DC1029F6612300AC8026 /* LoginModel.swift */; };
 		65934D4E29EFDEE400F3D2F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65934D4D29EFDEE400F3D2F1 /* LoginView.swift */; };
+		EA0FA4F72BD7ED0C00CA0510 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0FA4F62BD7ED0C00CA0510 /* SettingsView.swift */; };
 		EA3BCFDF29DA9E81009A68A9 /* SongEntries.json in Resources */ = {isa = PBXBuildFile; fileRef = EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */; };
 		EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFE029DAA00A009A68A9 /* SongModel.swift */; };
 		EA680CD529E6EEF5007BD693 /* VoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA680CD429E6EEF5007BD693 /* VoteModel.swift */; };
@@ -32,6 +33,7 @@
 		65407BD929EEB7CF00C5EAB6 /* EurovisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurovisionService.swift; sourceTree = "<group>"; };
 		6583DC1029F6612300AC8026 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		65934D4D29EFDEE400F3D2F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EA0FA4F62BD7ED0C00CA0510 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EA3BCFDE29DA9E81009A68A9 /* SongEntries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongEntries.json; sourceTree = "<group>"; };
 		EA3BCFE029DAA00A009A68A9 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		EA680CD429E6EEF5007BD693 /* VoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteModel.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				65934D4D29EFDEE400F3D2F1 /* LoginView.swift */,
 				EAA9BF1B2A0FE6AD00125DE3 /* YouTubePlayerView.swift */,
 				EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */,
+				EA0FA4F62BD7ED0C00CA0510 /* SettingsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */,
 				65934D4E29EFDEE400F3D2F1 /* LoginView.swift in Sources */,
 				65407BDA29EEB7CF00C5EAB6 /* EurovisionService.swift in Sources */,
+				EA0FA4F72BD7ED0C00CA0510 /* SettingsView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
 				EAA9BF1C2A0FE6AD00125DE3 /* YouTubePlayerView.swift in Sources */,
 				EAA9BF1A2A0FDFD700125DE3 /* VoteSummaryCellView.swift in Sources */,

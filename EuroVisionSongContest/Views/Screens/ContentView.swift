@@ -32,8 +32,10 @@ struct ContentView: View {
               Label("Home", systemImage: "house")
             }
             .tag(0)
-
-            Text("Settings View")
+            
+            NavigationStack {
+                SettingsView(selectedTab: $selectedTab)
+            }
             .tabItem {
               Label("Settings", systemImage: "gear")
             }
@@ -41,7 +43,6 @@ struct ContentView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
