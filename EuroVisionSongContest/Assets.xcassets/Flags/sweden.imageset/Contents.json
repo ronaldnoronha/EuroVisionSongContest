@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sweden.png",
+      "filename" : "ESC-HEART-SWEDEN-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-SWEDEN-BLACK.png",
       "idiom" : "universal"
     }
   ],

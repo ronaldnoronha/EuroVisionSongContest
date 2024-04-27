@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "armenia.png",
+      "filename" : "ESC-HEART-ARMENIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-ARMENIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "aborigin.png",
+      "filename" : "ESC-HEART-AUSTRALIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-AUSTRALIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "finland.png",
+      "filename" : "ESC-HEART-FINLAND-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-FINLAND-BLACK.png",
       "idiom" : "universal"
     }
   ],

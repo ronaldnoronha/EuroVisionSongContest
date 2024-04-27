@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "switzerland.png",
+      "filename" : "ESC-HEART-SWITZERLAND-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-SWITZERLAND-BLACK.png",
       "idiom" : "universal"
     }
   ],

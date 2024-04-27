@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "moldova.png",
+      "filename" : "ESC-HEART-MOLDOVA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-MOLDOVA-BLACK.png",
       "idiom" : "universal"
     }
   ],

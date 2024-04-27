@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "spain.png",
+      "filename" : "ESC-HEART-SPAIN-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-SPAIN-BLACK.png",
       "idiom" : "universal"
     }
   ],

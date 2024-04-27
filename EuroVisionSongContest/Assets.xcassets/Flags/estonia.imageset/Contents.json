@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "estonia.png",
+      "filename" : "ESC-HEART-ESTONIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-ESTONIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

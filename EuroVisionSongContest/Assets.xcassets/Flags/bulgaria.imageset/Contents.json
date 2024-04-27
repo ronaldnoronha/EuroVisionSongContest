@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bulgaria.png",
+      "filename" : "ESC-HEART-BULGARIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-BULGARIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

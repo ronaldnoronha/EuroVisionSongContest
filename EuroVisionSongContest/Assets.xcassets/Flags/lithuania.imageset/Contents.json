@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lithuania.png",
+      "filename" : "ESC-HEART-LITHUANIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-LITHUANIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

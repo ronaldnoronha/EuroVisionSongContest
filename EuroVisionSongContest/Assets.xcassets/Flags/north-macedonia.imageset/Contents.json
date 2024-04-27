@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "north-macedonia.png",
+      "filename" : "ESC-HEART-NORTHMACEDONIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-NORTHMACEDONIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

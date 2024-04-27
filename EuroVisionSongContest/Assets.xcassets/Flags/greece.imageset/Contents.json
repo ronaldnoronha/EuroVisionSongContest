@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "greece.png",
+      "filename" : "ESC-HEART-GREECE-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-GREECE-BLACK.png",
       "idiom" : "universal"
     }
   ],

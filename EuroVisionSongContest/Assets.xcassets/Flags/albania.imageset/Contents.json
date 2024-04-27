@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "albania.png",
+      "filename" : "ESC-HEART-ALBANIA-WHITE@2000px.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-ALBANIA-BLACK@2000px.png",
       "idiom" : "universal"
     }
   ],

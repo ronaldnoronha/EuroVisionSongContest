@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "slovenia.png",
+      "filename" : "ESC-HEART-SLOVENIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-SLOVENIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

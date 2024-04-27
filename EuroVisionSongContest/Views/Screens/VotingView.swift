@@ -134,8 +134,8 @@ struct VotingView: View {
 }
 
 struct VotingView_Previews: PreviewProvider {
-    static var manager = EurovisionManager()
     static var previews: some View {
         VotingView(country: "australia", songs: getSongEntries(country: "australia"))
+            .environmentObject(EurovisionManager())
     }
 }

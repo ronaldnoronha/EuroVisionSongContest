@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "austria.png",
+      "filename" : "ESC-HEART-AUSTRIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-AUSTRIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

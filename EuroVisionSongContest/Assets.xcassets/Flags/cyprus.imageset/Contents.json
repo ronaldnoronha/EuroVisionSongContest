@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cyprus.png",
+      "filename" : "ESC-HEART-CYPRUS-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-CYPRUS-BLACK.png",
       "idiom" : "universal"
     }
   ],

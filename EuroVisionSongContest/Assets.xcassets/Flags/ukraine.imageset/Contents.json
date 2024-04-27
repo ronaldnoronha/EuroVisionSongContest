@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ukraine.png",
+      "filename" : "ESC-HEART-UKRAINE-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-UKRAINE-BLACK.png",
       "idiom" : "universal"
     }
   ],

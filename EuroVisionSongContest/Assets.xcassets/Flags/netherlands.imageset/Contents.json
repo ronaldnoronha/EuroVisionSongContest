@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "netherlands.png",
+      "filename" : "ESC-HEART-NETHERLANDS-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-NETHERLANDS-BLACK.png",
       "idiom" : "universal"
     }
   ],

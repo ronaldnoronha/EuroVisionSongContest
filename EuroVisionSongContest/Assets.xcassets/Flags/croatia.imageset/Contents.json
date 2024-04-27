@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "croatia.png",
+      "filename" : "ESC-HEART-CROATIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-CROATIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "belgium.png",
+      "filename" : "ESC-HEART-BELGIUM-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-BELGIUM-BLACK.png",
       "idiom" : "universal"
     }
   ],

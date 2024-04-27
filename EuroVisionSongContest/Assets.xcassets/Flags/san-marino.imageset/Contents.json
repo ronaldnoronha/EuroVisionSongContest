@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "san-marino.png",
+      "filename" : "ESC-HEART-SANMARINO-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-SANMARINO-BLACK.png",
       "idiom" : "universal"
     }
   ],

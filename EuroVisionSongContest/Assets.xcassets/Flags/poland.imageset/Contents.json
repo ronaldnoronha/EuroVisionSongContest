@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "poland.png",
+      "filename" : "ESC-HEART-POLAND-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-POLAND-BLACK.png",
       "idiom" : "universal"
     }
   ],

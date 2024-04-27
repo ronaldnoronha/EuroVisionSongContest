@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "romania.png",
+      "filename" : "ESC-HEART-ROMANIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-ROMANIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

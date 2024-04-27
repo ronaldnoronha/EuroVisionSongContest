@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "ESC-HEART-BOSNIAHERZEGOVINA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-BOSNIAHERZEGOVINA-BLACK.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "latvia.png",
+      "filename" : "ESC-HEART-LATVIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-LATVIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

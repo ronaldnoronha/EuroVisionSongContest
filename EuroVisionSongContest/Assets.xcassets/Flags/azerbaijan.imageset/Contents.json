@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "azerbaijan.png",
+      "filename" : "ESC-HEART-AZERBAIJAN-WHITE-v2.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-AZERBAIJAN-BLACK-v2.png",
       "idiom" : "universal"
     }
   ],

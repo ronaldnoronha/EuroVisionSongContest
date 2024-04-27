@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "georgia.png",
+      "filename" : "ESC-HEART-GEORGIA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-GEORGIA-BLACK.png",
       "idiom" : "universal"
     }
   ],

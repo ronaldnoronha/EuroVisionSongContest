@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ireland.png",
+      "filename" : "ESC-HEART-IRELAND-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-IRELAND-BLACK.png",
       "idiom" : "universal"
     }
   ],

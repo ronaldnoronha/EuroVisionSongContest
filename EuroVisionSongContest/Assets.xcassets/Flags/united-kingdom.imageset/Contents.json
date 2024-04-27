@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "united-kingdom.png",
+      "filename" : "ESC-HEART-UNITEDKINGDOM-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-UNITEDKINGDOM-BLACK.png",
       "idiom" : "universal"
     }
   ],

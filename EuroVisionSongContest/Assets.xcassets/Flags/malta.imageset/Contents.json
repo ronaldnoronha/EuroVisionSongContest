@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "malta.png",
+      "filename" : "ESC-HEART-MALTA-WHITE.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ESC-HEART-MALTA-BLACK.png",
       "idiom" : "universal"
     }
   ],
