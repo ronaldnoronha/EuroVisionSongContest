@@ -52,7 +52,7 @@ let participants: [String] = [
 ]
 
 func getSongEntries(country: String) -> [Song] {
-    guard let fileUrl = Bundle.main.url(forResource: "SongEntries", withExtension: "json") else  {
+    guard let fileUrl = Bundle.main.url(forResource: "SongEntries", withExtension: "json") else {
         fatalError("Couldn't find file in app bundle")
     }
 

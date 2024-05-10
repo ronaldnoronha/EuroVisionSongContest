@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,9 @@
 		EA3BCFE129DAA00A009A68A9 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BCFE029DAA00A009A68A9 /* SongModel.swift */; };
 		EA680CD529E6EEF5007BD693 /* VoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA680CD429E6EEF5007BD693 /* VoteModel.swift */; };
 		EA6D96F529D995BF0098C63E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D96F429D995BF0098C63E /* Constants.swift */; };
+		EA9A5BDD2BED11A300ACBA02 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA9A5BDC2BED11A300ACBA02 /* YouTubePlayerKit */; };
 		EAA9BF1A2A0FDFD700125DE3 /* VoteSummaryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9BF192A0FDFD700125DE3 /* VoteSummaryCellView.swift */; };
-		EAA9BF1C2A0FE6AD00125DE3 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9BF1B2A0FE6AD00125DE3 /* YouTubePlayerView.swift */; };
+		EAA9BF1C2A0FE6AD00125DE3 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9BF1B2A0FE6AD00125DE3 /* VideoView.swift */; };
 		EAAE226329DC664200160DE7 /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE226229DC664100160DE7 /* SongCellView.swift */; };
 		EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */; };
 		EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CCEB2825238C00E63E33 /* ContentView.swift */; };
@@ -39,7 +40,7 @@
 		EA680CD429E6EEF5007BD693 /* VoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteModel.swift; sourceTree = "<group>"; };
 		EA6D96F429D995BF0098C63E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAA9BF192A0FDFD700125DE3 /* VoteSummaryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteSummaryCellView.swift; sourceTree = "<group>"; };
-		EAA9BF1B2A0FE6AD00125DE3 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
+		EAA9BF1B2A0FE6AD00125DE3 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		EAAE226229DC664100160DE7 /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
 		EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroVisionSongContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB9CCE92825238C00E63E33 /* EuroVisionSongContestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuroVisionSongContestApp.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9A5BDD2BED11A300ACBA02 /* YouTubePlayerKit in Frameworks */,
 				EAF0E7CB2BBA8A6D00053D92 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +90,7 @@
 				EAB9CCEB2825238C00E63E33 /* ContentView.swift */,
 				EAB9CD002825738000E63E33 /* VotingView.swift */,
 				65934D4D29EFDEE400F3D2F1 /* LoginView.swift */,
-				EAA9BF1B2A0FE6AD00125DE3 /* YouTubePlayerView.swift */,
+				EAA9BF1B2A0FE6AD00125DE3 /* VideoView.swift */,
 				EAFD54CC29F9EA7200F874BF /* VotesSummaryView.swift */,
 				EA0FA4F62BD7ED0C00CA0510 /* SettingsView.swift */,
 			);
@@ -174,6 +176,7 @@
 			name = EuroVisionSongContest;
 			packageProductDependencies = (
 				EAF0E7CA2BBA8A6D00053D92 /* CodeScanner */,
+				EA9A5BDC2BED11A300ACBA02 /* YouTubePlayerKit */,
 			);
 			productName = EuroVisionSongContest;
 			productReference = EAB9CCE62825238C00E63E33 /* EuroVisionSongContest.app */;
@@ -205,6 +208,7 @@
 			mainGroup = EAB9CCDD2825238C00E63E33;
 			packageReferences = (
 				EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				EA9A5BDB2BED11A200ACBA02 /* XCLocalSwiftPackageReference "../../Downloads/YouTubePlayerKit-1.8.0" */,
 			);
 			productRefGroup = EAB9CCE72825238C00E63E33 /* Products */;
 			projectDirPath = "";
@@ -244,7 +248,7 @@
 				65407BDA29EEB7CF00C5EAB6 /* EurovisionService.swift in Sources */,
 				EA0FA4F72BD7ED0C00CA0510 /* SettingsView.swift in Sources */,
 				EAB9CCF32825238F00E63E33 /* Persistence.swift in Sources */,
-				EAA9BF1C2A0FE6AD00125DE3 /* YouTubePlayerView.swift in Sources */,
+				EAA9BF1C2A0FE6AD00125DE3 /* VideoView.swift in Sources */,
 				EAA9BF1A2A0FDFD700125DE3 /* VoteSummaryCellView.swift in Sources */,
 				EAB9CCEC2825238C00E63E33 /* ContentView.swift in Sources */,
 				EAB9CCEA2825238C00E63E33 /* EuroVisionSongContestApp.swift in Sources */,
@@ -472,6 +476,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		EA9A5BDB2BED11A200ACBA02 /* XCLocalSwiftPackageReference "../../Downloads/YouTubePlayerKit-1.8.0" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Downloads/YouTubePlayerKit-1.8.0";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -484,6 +495,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EA9A5BDC2BED11A300ACBA02 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YouTubePlayerKit;
+		};
 		EAF0E7CA2BBA8A6D00053D92 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EAF0E7C92BBA8A6D00053D92 /* XCRemoteSwiftPackageReference "CodeScanner" */;

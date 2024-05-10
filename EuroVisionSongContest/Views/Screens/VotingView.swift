@@ -76,7 +76,7 @@ struct VotingView: View {
                                 }
                                 .sheet(isPresented: $showModal) {
                                     if let songVideoId = songVideoId {
-                                        YouTubePlayerView(videoId: songVideoId)
+                                        VideoView(videoId: songVideoId)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     }
                                 }
