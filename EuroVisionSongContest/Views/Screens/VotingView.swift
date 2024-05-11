@@ -60,8 +60,8 @@ struct VotingView: View {
                         
                         List {
                             ForEach(0..<songs.count, id:\.self) { index in
-                                Button {
-                                    showModal = true
+                                NavigationLink {
+                                    VideoView(videoId: songs[index].link)
                                 } label: {
                                     HStack {
                                         SongCellView(song: songs[index])
@@ -72,12 +72,6 @@ struct VotingView: View {
                                         }
                                         .pickerStyle(MenuPickerStyle())
                                         Spacer()
-                                    }
-                                }
-                                .sheet(isPresented: $showModal) {
-                                    if let songVideoId = songVideoId {
-                                        VideoView(videoId: songVideoId)
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     }
                                 }
                                 .onChange(of: selectedNumbers) { _ in

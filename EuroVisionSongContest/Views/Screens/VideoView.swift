@@ -9,12 +9,6 @@ import SwiftUI
 
 import YouTubePlayerKit
 
-struct YouTubePlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoView(videoId: "mp8OG4ApocI")
-    }
-}
-
 struct VideoView: View {
     let videoId: String
     
@@ -26,4 +20,9 @@ struct VideoView: View {
         return YouTubePlayer(stringLiteral: "https://youtube.com/watch?v=\(videoId)")
     }
 }
- 
+
+struct VideoView_Previews: PreviewProvider {
+    static var previews: some View {
+        VideoView(videoId: "kiIhvA2Ozzk")
+    }
+}
